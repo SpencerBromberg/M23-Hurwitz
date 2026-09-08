@@ -1,0 +1,113 @@
+{
+  "D10_states_zero_based": [
+    5619,
+    5707,
+    10252,
+    11406,
+    13499,
+    15797,
+    17032,
+    18695,
+    20064,
+    21190
+  ],
+  "beta10_model": {
+    "beta10": "t**10 - 5*t**8 + 10*t**6 - 10*t**4 + 5*t**2",
+    "beta5": "v**5 - 5*v**4 + 10*v**3 - 10*v**2 + 5*v",
+    "discriminant": "10000000000*y*(y - 1)**8",
+    "etale_open": "y*(y-1) != 0",
+    "kappa": "t -> -t",
+    "quotient_coordinate": "v=t^2"
+  },
+  "certificate": "M23_DUAL_TWO_FIVES_PROJECTOR",
+  "fiber_profile": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "kappa_pairs": [
+    [
+      21190,
+      5707
+    ],
+    [
+      11406,
+      10252
+    ],
+    [
+      17032,
+      13499
+    ],
+    [
+      15797,
+      18695
+    ],
+    [
+      20064,
+      5619
+    ]
+  ],
+  "ledger_action": {
+    "commute": true,
+    "kappa": "(n,p)->(n,p+1)",
+    "kappa_free": true,
+    "q1": "(n,p)->(n+1,p)"
+  },
+  "multiplier2": {
+    "X_commutes_kappa": true,
+    "X_order": 4,
+    "X_q1_Xinv": "q1^2",
+    "ledger_group_order": 40,
+    "quotient_order_mod_kappa": 20,
+    "quotient_type": "F20"
+  },
+  "projected_key_fibers": {
+    "0": [
+      5707,
+      21190
+    ],
+    "1": [
+      10252,
+      11406
+    ],
+    "2": [
+      13499,
+      17032
+    ],
+    "3": [
+      15797,
+      18695
+    ],
+    "4": [
+      5619,
+      20064
+    ]
+  },
+  "projectors": {
+    "P_minus_rank": 5,
+    "P_plus_rank": 5,
+    "idempotent": true,
+    "orthogonal": true
+  },
+  "scope": {
+    "rigidified_two_five_ledger_certified": true
+  },
+  "two_five_cycles": [
+    [
+      21190,
+      11406,
+      17032,
+      15797,
+      20064
+    ],
+    [
+      5707,
+      10252,
+      13499,
+      18695,
+      5619
+    ]
+  ]
+}

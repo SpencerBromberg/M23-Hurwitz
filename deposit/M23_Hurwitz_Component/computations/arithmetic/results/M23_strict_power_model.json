@@ -1,0 +1,126 @@
+{
+  "audited_pairs_one_based": {
+    "B13_fixed_pair": [
+      454,
+      914
+    ],
+    "B14_fixed_pair": [
+      634,
+      974
+    ]
+  },
+  "certificate": "M23_STRICT_POWER_MODEL_CERTIFICATE",
+  "checks": {
+    "common_modulus": true,
+    "cycle_types": true,
+    "first_two_generators_noncommuting": true,
+    "fixed_points": true,
+    "no_strict_swap": true,
+    "operator_names": true,
+    "operator_orders": true,
+    "orbit_size": true,
+    "simultaneous_centralizer_order": true,
+    "simultaneous_centralizer_root_images": true,
+    "tests_per_pair": true,
+    "total_tests": true,
+    "unit_count": true
+  },
+  "common_power_modulus": 9240,
+  "cycle_types": [
+    {
+      "1": 24,
+      "2": 136,
+      "3": 178,
+      "5": 30
+    },
+    {
+      "1": 2,
+      "2": 21,
+      "3": 16,
+      "4": 41,
+      "5": 46,
+      "7": 38,
+      "8": 12,
+      "11": 12
+    },
+    {
+      "1": 2,
+      "2": 21,
+      "3": 16,
+      "4": 41,
+      "5": 46,
+      "7": 38,
+      "8": 12,
+      "11": 12
+    }
+  ],
+  "elapsed_seconds": 4.039696385999832,
+  "environment": {
+    "input_sha256": "6d6e3c9eec36cef6d25fc313cdda567c6cd7dfcaeb134af538696e4e820b54be",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "script_sha256": "167e9b7bc00090e33408248f9c6cccf620a45adf17e0c7957b5a47ad377e1a6e"
+  },
+  "first_two_generators_commute": false,
+  "fixed_points_one_based": [
+    [
+      1,
+      96,
+      118,
+      162,
+      236,
+      249,
+      299,
+      381,
+      398,
+      506,
+      508,
+      535,
+      542,
+      554,
+      562,
+      579,
+      581,
+      600,
+      602,
+      625,
+      785,
+      788,
+      804,
+      956
+    ],
+    [
+      454,
+      914
+    ],
+    [
+      634,
+      974
+    ]
+  ],
+  "input": "data/orbit_certificate.json.gz",
+  "operator_names": [
+    "B12",
+    "B13",
+    "B14"
+  ],
+  "operator_orders": [
+    30,
+    9240,
+    9240
+  ],
+  "orbit_size": 980,
+  "pass": true,
+  "scope": "finite rooted colored-digraph theorem for the strict relations Phi*s_ij=s_ij^m*Phi, with exact simultaneous centralizer; arithmetic transport uses the separate normalizer-power-conjugacy criterion",
+  "simultaneous_centralizer_order": 1,
+  "simultaneous_centralizer_root_images_one_based": [
+    1
+  ],
+  "successes": [],
+  "tests_per_pair": {
+    "B13_fixed_pair": 3840,
+    "B14_fixed_pair": 3840
+  },
+  "total_tests": 7680,
+  "unit_count": 1920
+}

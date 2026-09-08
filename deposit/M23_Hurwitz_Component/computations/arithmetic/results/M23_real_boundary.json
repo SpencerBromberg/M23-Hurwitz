@@ -1,0 +1,727 @@
+{
+  "boundary": {
+    "lambda_0": {
+      "fixed_cycle_representatives_one_based": [
+        13,
+        26,
+        44,
+        72,
+        81,
+        136,
+        167,
+        274,
+        315,
+        370,
+        371,
+        378,
+        434,
+        446,
+        488,
+        697,
+        762,
+        766,
+        779,
+        816,
+        818,
+        845,
+        922,
+        925,
+        926,
+        961
+      ],
+      "geometric_point_count": 368,
+      "nonreal_point_count": 342,
+      "real_point_count": 26,
+      "real_points_by_node_order": {
+        "3": 6,
+        "4": 12,
+        "6": 8
+      },
+      "real_points_by_width": {
+        "2": 12,
+        "3": 14
+      },
+      "singleton_signature_count": 0,
+      "singleton_signatures": []
+    },
+    "lambda_1": {
+      "fixed_cycle_representatives_one_based": [
+        5,
+        23,
+        66,
+        80,
+        82,
+        87,
+        123,
+        165,
+        179,
+        201,
+        281,
+        329,
+        330,
+        372,
+        433,
+        458,
+        467,
+        632,
+        683,
+        702,
+        761,
+        819,
+        823,
+        837,
+        907,
+        918,
+        937,
+        946
+      ],
+      "geometric_point_count": 188,
+      "nonreal_point_count": 160,
+      "real_point_count": 28,
+      "real_points_by_node_order": {
+        "2": 2,
+        "4": 7,
+        "5": 8,
+        "6": 11
+      },
+      "real_points_by_width": {
+        "2": 9,
+        "3": 4,
+        "4": 7,
+        "5": 8
+      },
+      "singleton_signature_count": 4,
+      "singleton_signatures": [
+        {
+          "cycle_one_based": [
+            281,
+            569,
+            577,
+            288
+          ],
+          "fiber": "lambda_1",
+          "real": true,
+          "representative_one_based": 281,
+          "signature": {
+            "left_component": {
+              "orbit_sizes": [
+                1,
+                3,
+                3,
+                4,
+                4,
+                8
+              ],
+              "order": 24
+            },
+            "node_order": 4,
+            "right_component": {
+              "orbit_sizes": [
+                1,
+                2,
+                5,
+                15
+              ],
+              "order": 120
+            },
+            "width": 4
+          }
+        },
+        {
+          "cycle_one_based": [
+            372,
+            698,
+            699
+          ],
+          "fiber": "lambda_1",
+          "real": true,
+          "representative_one_based": 372,
+          "signature": {
+            "left_component": {
+              "orbit_sizes": [
+                1,
+                2,
+                6,
+                6,
+                8
+              ],
+              "order": 24
+            },
+            "node_order": 6,
+            "right_component": {
+              "orbit_sizes": [
+                2,
+                6,
+                15
+              ],
+              "order": 720
+            },
+            "width": 3
+          }
+        },
+        {
+          "cycle_one_based": [
+            823,
+            826,
+            954
+          ],
+          "fiber": "lambda_1",
+          "real": true,
+          "representative_one_based": 823,
+          "signature": {
+            "left_component": {
+              "orbit_sizes": [
+                1,
+                3,
+                3,
+                8,
+                8
+              ],
+              "order": 24
+            },
+            "node_order": 6,
+            "right_component": {
+              "orbit_sizes": [
+                2,
+                6,
+                15
+              ],
+              "order": 720
+            },
+            "width": 3
+          }
+        },
+        {
+          "cycle_one_based": [
+            837,
+            953
+          ],
+          "fiber": "lambda_1",
+          "real": true,
+          "representative_one_based": 837,
+          "signature": {
+            "left_component": {
+              "orbit_sizes": [
+                2,
+                3,
+                3,
+                6,
+                9
+              ],
+              "order": 18
+            },
+            "node_order": 6,
+            "right_component": {
+              "orbit_sizes": [
+                2,
+                6,
+                15
+              ],
+              "order": 720
+            },
+            "width": 2
+          }
+        }
+      ]
+    },
+    "lambda_infinity": {
+      "fixed_cycle_representatives_one_based": [
+        20,
+        23,
+        40,
+        82,
+        124,
+        208,
+        314,
+        329,
+        376,
+        437,
+        480,
+        513,
+        618,
+        645,
+        647,
+        691,
+        699,
+        725,
+        770,
+        775,
+        802,
+        818,
+        824,
+        833,
+        837,
+        845,
+        913,
+        973
+      ],
+      "geometric_point_count": 188,
+      "nonreal_point_count": 160,
+      "real_point_count": 28,
+      "real_points_by_node_order": {
+        "2": 2,
+        "4": 7,
+        "5": 8,
+        "6": 11
+      },
+      "real_points_by_width": {
+        "2": 9,
+        "3": 4,
+        "4": 7,
+        "5": 8
+      },
+      "singleton_signature_count": 4,
+      "singleton_signatures": [
+        {
+          "cycle_one_based": [
+            20,
+            66,
+            69,
+            21
+          ],
+          "fiber": "lambda_infinity",
+          "real": true,
+          "representative_one_based": 20,
+          "signature": {
+            "left_component": {
+              "orbit_sizes": [
+                1,
+                2,
+                5,
+                15
+              ],
+              "order": 120
+            },
+            "node_order": 4,
+            "right_component": {
+              "orbit_sizes": [
+                1,
+                3,
+                3,
+                4,
+                4,
+                8
+              ],
+              "order": 24
+            },
+            "width": 4
+          }
+        },
+        {
+          "cycle_one_based": [
+            770,
+            773
+          ],
+          "fiber": "lambda_infinity",
+          "real": true,
+          "representative_one_based": 770,
+          "signature": {
+            "left_component": {
+              "orbit_sizes": [
+                2,
+                6,
+                15
+              ],
+              "order": 720
+            },
+            "node_order": 6,
+            "right_component": {
+              "orbit_sizes": [
+                2,
+                3,
+                3,
+                6,
+                9
+              ],
+              "order": 18
+            },
+            "width": 2
+          }
+        },
+        {
+          "cycle_one_based": [
+            818,
+            970,
+            936
+          ],
+          "fiber": "lambda_infinity",
+          "real": true,
+          "representative_one_based": 818,
+          "signature": {
+            "left_component": {
+              "orbit_sizes": [
+                2,
+                6,
+                15
+              ],
+              "order": 720
+            },
+            "node_order": 6,
+            "right_component": {
+              "orbit_sizes": [
+                1,
+                3,
+                3,
+                8,
+                8
+              ],
+              "order": 24
+            },
+            "width": 3
+          }
+        },
+        {
+          "cycle_one_based": [
+            973,
+            980,
+            978
+          ],
+          "fiber": "lambda_infinity",
+          "real": true,
+          "representative_one_based": 973,
+          "signature": {
+            "left_component": {
+              "orbit_sizes": [
+                2,
+                6,
+                15
+              ],
+              "order": 720
+            },
+            "node_order": 6,
+            "right_component": {
+              "orbit_sizes": [
+                1,
+                2,
+                6,
+                6,
+                8
+              ],
+              "order": 24
+            },
+            "width": 3
+          }
+        }
+      ]
+    }
+  },
+  "boundary_totals": {
+    "certified_Q_rational_points": 8,
+    "geometric_points": 744,
+    "nonreal_points": 662,
+    "real_points": 82
+  },
+  "certificate": "M23_REAL_STRUCTURE_AND_BOUNDARY_SIGNATURE_CERTIFICATE",
+  "certified_Q_rational_boundary_points": [
+    {
+      "cycle_one_based": [
+        281,
+        569,
+        577,
+        288
+      ],
+      "fiber": "lambda_1",
+      "real": true,
+      "representative_one_based": 281,
+      "signature": {
+        "left_component": {
+          "orbit_sizes": [
+            1,
+            3,
+            3,
+            4,
+            4,
+            8
+          ],
+          "order": 24
+        },
+        "node_order": 4,
+        "right_component": {
+          "orbit_sizes": [
+            1,
+            2,
+            5,
+            15
+          ],
+          "order": 120
+        },
+        "width": 4
+      }
+    },
+    {
+      "cycle_one_based": [
+        372,
+        698,
+        699
+      ],
+      "fiber": "lambda_1",
+      "real": true,
+      "representative_one_based": 372,
+      "signature": {
+        "left_component": {
+          "orbit_sizes": [
+            1,
+            2,
+            6,
+            6,
+            8
+          ],
+          "order": 24
+        },
+        "node_order": 6,
+        "right_component": {
+          "orbit_sizes": [
+            2,
+            6,
+            15
+          ],
+          "order": 720
+        },
+        "width": 3
+      }
+    },
+    {
+      "cycle_one_based": [
+        823,
+        826,
+        954
+      ],
+      "fiber": "lambda_1",
+      "real": true,
+      "representative_one_based": 823,
+      "signature": {
+        "left_component": {
+          "orbit_sizes": [
+            1,
+            3,
+            3,
+            8,
+            8
+          ],
+          "order": 24
+        },
+        "node_order": 6,
+        "right_component": {
+          "orbit_sizes": [
+            2,
+            6,
+            15
+          ],
+          "order": 720
+        },
+        "width": 3
+      }
+    },
+    {
+      "cycle_one_based": [
+        837,
+        953
+      ],
+      "fiber": "lambda_1",
+      "real": true,
+      "representative_one_based": 837,
+      "signature": {
+        "left_component": {
+          "orbit_sizes": [
+            2,
+            3,
+            3,
+            6,
+            9
+          ],
+          "order": 18
+        },
+        "node_order": 6,
+        "right_component": {
+          "orbit_sizes": [
+            2,
+            6,
+            15
+          ],
+          "order": 720
+        },
+        "width": 2
+      }
+    },
+    {
+      "cycle_one_based": [
+        20,
+        66,
+        69,
+        21
+      ],
+      "fiber": "lambda_infinity",
+      "real": true,
+      "representative_one_based": 20,
+      "signature": {
+        "left_component": {
+          "orbit_sizes": [
+            1,
+            2,
+            5,
+            15
+          ],
+          "order": 120
+        },
+        "node_order": 4,
+        "right_component": {
+          "orbit_sizes": [
+            1,
+            3,
+            3,
+            4,
+            4,
+            8
+          ],
+          "order": 24
+        },
+        "width": 4
+      }
+    },
+    {
+      "cycle_one_based": [
+        770,
+        773
+      ],
+      "fiber": "lambda_infinity",
+      "real": true,
+      "representative_one_based": 770,
+      "signature": {
+        "left_component": {
+          "orbit_sizes": [
+            2,
+            6,
+            15
+          ],
+          "order": 720
+        },
+        "node_order": 6,
+        "right_component": {
+          "orbit_sizes": [
+            2,
+            3,
+            3,
+            6,
+            9
+          ],
+          "order": 18
+        },
+        "width": 2
+      }
+    },
+    {
+      "cycle_one_based": [
+        818,
+        970,
+        936
+      ],
+      "fiber": "lambda_infinity",
+      "real": true,
+      "representative_one_based": 818,
+      "signature": {
+        "left_component": {
+          "orbit_sizes": [
+            2,
+            6,
+            15
+          ],
+          "order": 720
+        },
+        "node_order": 6,
+        "right_component": {
+          "orbit_sizes": [
+            1,
+            3,
+            3,
+            8,
+            8
+          ],
+          "order": 24
+        },
+        "width": 3
+      }
+    },
+    {
+      "cycle_one_based": [
+        973,
+        980,
+        978
+      ],
+      "fiber": "lambda_infinity",
+      "real": true,
+      "representative_one_based": 973,
+      "signature": {
+        "left_component": {
+          "orbit_sizes": [
+            2,
+            6,
+            15
+          ],
+          "order": 720
+        },
+        "node_order": 6,
+        "right_component": {
+          "orbit_sizes": [
+            1,
+            2,
+            6,
+            6,
+            8
+          ],
+          "order": 24
+        },
+        "width": 3
+      }
+    }
+  ],
+  "checks": {
+    "all_singleton_signatures_real": true,
+    "boundary_counts_368_188_188": true,
+    "complex_conjugation_cycle_type_1_26_2_477": true,
+    "complex_conjugation_is_involution": true,
+    "complex_conjugation_odd": true,
+    "complex_conjugation_relation_B12": true,
+    "complex_conjugation_relation_B13": true,
+    "complex_conjugation_relation_B14": true,
+    "eight_singleton_stable_signatures": true,
+    "lambda1_local_map_cycle_type_1_26_2_477": true,
+    "lambda1_local_map_inverts_B13": true,
+    "ordered_orbit_size_980": true,
+    "peripheral_product_one": true,
+    "real_boundary_counts_26_28_28": true,
+    "real_interval_sheet_counts_26_26_30": true,
+    "total_boundary_points_744": true,
+    "total_nonreal_boundary_points_662": true,
+    "total_real_boundary_points_82": true,
+    "unique_complex_conjugation_operator": true,
+    "width_one_pairs_exchanged": true
+  },
+  "complex_conjugation": {
+    "arithmetic_monodromy": "S_980",
+    "cycle_type": {
+      "1": 26,
+      "2": 477
+    },
+    "fixed_nielsen_sheets": 26,
+    "parity": "odd",
+    "root_image_one_based": 118
+  },
+  "environment": {
+    "python": "3.13.5",
+    "script_sha256": "7d520bb98802fbc394ca564c718b32aaccedb0bea84212f91c58f00cf89a5bf4",
+    "sympy": "1.14.0"
+  },
+  "ordered_orbit_size": 980,
+  "pass": true,
+  "real_interval_sheet_counts": {
+    "(-infinity,0)": 26,
+    "(0,1)": 26,
+    "(1,infinity)": 30
+  },
+  "scope": "complex conjugation on the ordered 980-sheet cover, arithmetic monodromy, real boundary census, and Q-rationality from singleton stable signatures",
+  "width_one_arithmetic": {
+    "field_discriminants": "undetermined by the present certificate",
+    "lambda_1": "one imaginary quadratic closed point",
+    "lambda_infinity": "one imaginary quadratic closed point"
+  }
+}

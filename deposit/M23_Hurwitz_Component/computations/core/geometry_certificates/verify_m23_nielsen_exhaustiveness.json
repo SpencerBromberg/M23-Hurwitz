@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "atlas_group_order": true,
+    "centralizer_order": true,
+    "class_2a_size": true,
+    "class_2a_unique": true,
+    "class_3a_size": true,
+    "class_3a_unique": true,
+    "dual_membership_methods_agree": true,
+    "fixed_d_intransitive_solutions": true,
+    "fixed_d_product_one_solutions": true,
+    "fixed_d_transitive_solutions": true,
+    "normalized_transitive_count": true,
+    "printed_tuple_cycle_types": true,
+    "printed_tuple_generates_m23": true,
+    "printed_tuple_product_one": true,
+    "seed_solution_formula": true
+  },
+  "class_enumeration": {
+    "centralizer_order": 15,
+    "class_2a_size": 3795,
+    "class_3a_size": 56672,
+    "fixed_d_intransitive_solutions": 112500,
+    "fixed_d_product_one_solutions": 127200,
+    "fixed_d_transitive_solutions": 14700,
+    "normalized_transitive_count": 980,
+    "ordered_pairs_tested": 14402025,
+    "solution_pair_sha256": "eac973c05ad0a2fbea1167633618b792875e8b657fc62db608a9c81b1ae21695",
+    "transitive_pair_sha256": "b74f75c2b790bf143aaebc5354b25b8aaa555ac15c71784faacdf2a403ea7c70"
+  },
+  "conventions": {
+    "fixed_fourth_entry": "the printed 5A element d",
+    "permutation_action": "right",
+    "product": "i^(xy)=(i^x)^y",
+    "solved_entry": "c=(xy)^(-1)d^(-1)"
+  },
+  "environment": {
+    "implementation": "CPython",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "script_sha256": "29e0a666285951884b133ec73b1e764b4fb229ff9af081d88051cb825e817054",
+    "sympy": "1.14.0"
+  },
+  "group": {
+    "degree": 23,
+    "order": 10200960,
+    "printed_tuple_cycle_types": [
+      {
+        "1": 7,
+        "2": 8
+      },
+      {
+        "1": 7,
+        "2": 8
+      },
+      {
+        "1": 5,
+        "3": 6
+      },
+      {
+        "1": 3,
+        "5": 4
+      }
+    ],
+    "printed_tuple_generated_group_order": 10200960,
+    "printed_tuple_orders": [
+      2,
+      2,
+      3,
+      5
+    ]
+  },
+  "pass": true,
+  "performance": {
+    "batch_size": 32,
+    "elapsed_seconds": 12.330543,
+    "peak_rss_kb": 232384
+  }
+}

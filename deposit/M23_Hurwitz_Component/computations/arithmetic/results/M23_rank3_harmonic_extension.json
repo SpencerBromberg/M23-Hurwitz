@@ -1,0 +1,57 @@
+{
+  "braid_intertwining": {
+    "c_q1_c": "q3^-1",
+    "c_q2_c": "q2^-1",
+    "c_q3_c": "q1^-1"
+  },
+  "certificate": "M23_RANK3_HARMONIC_EXTENSION",
+  "character_dimension_multiplicities": {
+    "1429": 4,
+    "1511": 4
+  },
+  "character_dimensions": {
+    "+1,+1,+1": 1511,
+    "+1,+1,-1": 1429,
+    "+1,-1,+1": 1429,
+    "+1,-1,-1": 1511,
+    "-1,+1,+1": 1429,
+    "-1,+1,-1": 1511,
+    "-1,-1,+1": 1511,
+    "-1,-1,-1": 1429
+  },
+  "checks": {
+    "a_b_c_commute": true,
+    "a_b_c_involutions": true,
+    "character_dimensions_1511_1429": true,
+    "fixed_point_census": true,
+    "full_orbit_size_11760": true,
+    "group_order_8": true,
+    "inverse_reversal_braid_relations": true,
+    "orbit_sizes_82x4_1429x8": true,
+    "q_double_prime_2940_blocks": true,
+    "reduced_c_cycle_type_1_82_2_1429": true
+  },
+  "conclusion": "Inverse reversal extends the free Klein-four reduction to an exact (C2)^3 action. The eight character spaces have dimensions 1511 and 1429 by parity, and the induced involution on the 2940 Klein blocks has cycle type 1^82 2^1429.",
+  "fixed_point_counts": {
+    "1": 11760,
+    "a": 0,
+    "ab": 0,
+    "abc": 328,
+    "ac": 0,
+    "b": 0,
+    "bc": 0,
+    "c": 0
+  },
+  "full_orbit_size": 11760,
+  "group_orbit_sizes": {
+    "4": 82,
+    "8": 1429
+  },
+  "group_order": 8,
+  "inverse_reversal_on_reduced_blocks_cycle_type": {
+    "1": 82,
+    "2": 1429
+  },
+  "pass": true,
+  "q_double_prime_block_count": 2940
+}

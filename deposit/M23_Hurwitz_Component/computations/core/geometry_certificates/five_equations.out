@@ -1,0 +1,3 @@
+M23_five_branch_equations.json 9722e44a3c55c7a945684f5044e7ab40464d40c9933e313056008f035d4e5341
+M23_five_branch_equations.txt 44041364bd09c01c3515b1a26287183694603f6fe4136f44327829296ffdbbac
+PASS equation_count=72 variable_count_before_gauge=83 degrees=23

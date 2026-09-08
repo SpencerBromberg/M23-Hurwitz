@@ -1,0 +1,154 @@
+{
+  "checks": {
+    "adjacent_orders": true,
+    "histograms": true,
+    "operator_bijections": true,
+    "orbit_size": true,
+    "seed_group_order": true,
+    "seed_indices": true,
+    "seed_membership_in_atlas_copy": true,
+    "seed_orders": true,
+    "seed_product_one": true,
+    "source_genus_zero": true
+  },
+  "component": {
+    "operator_histograms": {
+      "q1": {
+        "fixed_points": 24,
+        "histogram": {
+          "1": 24,
+          "2": 292,
+          "3": 796,
+          "4": 1248,
+          "5": 980,
+          "6": 1428
+        },
+        "index": 16688,
+        "max_cycle_length": 6,
+        "num_cycles": 4768
+      },
+      "q2": {
+        "fixed_points": 24,
+        "histogram": {
+          "1": 24,
+          "2": 292,
+          "3": 796,
+          "4": 1248,
+          "5": 980,
+          "6": 1428
+        },
+        "index": 16688,
+        "max_cycle_length": 6,
+        "num_cycles": 4768
+      },
+      "q3": {
+        "fixed_points": 24,
+        "histogram": {
+          "1": 24,
+          "2": 292,
+          "3": 796,
+          "4": 1248,
+          "5": 980,
+          "6": 1428
+        },
+        "index": 16688,
+        "max_cycle_length": 6,
+        "num_cycles": 4768
+      },
+      "q4sq": {
+        "fixed_points": 18,
+        "histogram": {
+          "1": 18,
+          "2": 468,
+          "3": 582,
+          "4": 984,
+          "5": 900,
+          "7": 840,
+          "8": 192,
+          "11": 264
+        },
+        "index": 17208,
+        "max_cycle_length": 11,
+        "num_cycles": 4248
+      }
+    },
+    "size": 21456
+  },
+  "conventions": {
+    "colored_braid_generators": [
+      "q1",
+      "q2",
+      "q3",
+      "q4sq"
+    ],
+    "permutation_composition": "p after q",
+    "product_one": "g1*g2*g3*g4*g5=identity in this convention"
+  },
+  "environment": {
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "sympy": "1.14.0"
+  },
+  "pass": true,
+  "performance": {
+    "elapsed_seconds": 28.514448834000177,
+    "peak_rss_kb": 368288
+  },
+  "scope": "geometric finite computation only; no multiplier, Q-cusp, or rational-point conclusion",
+  "seed": {
+    "adjacent_product_orders": [
+      6,
+      6,
+      3,
+      11
+    ],
+    "cycle_types": [
+      {
+        "1": 7,
+        "2": 8
+      },
+      {
+        "1": 7,
+        "2": 8
+      },
+      {
+        "1": 7,
+        "2": 8
+      },
+      {
+        "1": 7,
+        "2": 8
+      },
+      {
+        "1": 5,
+        "3": 6
+      }
+    ],
+    "fingerprint_sha256": "8f44b6ffbdd90575eb6f5cd2cf26d0e08bbd6ac3964a7242fe03f60ad27c596b",
+    "generated_group_order": 10200960,
+    "indices": [
+      8,
+      8,
+      8,
+      8,
+      12
+    ],
+    "membership_in_atlas_copy": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "orders": [
+      2,
+      2,
+      2,
+      2,
+      3
+    ],
+    "product_one": true,
+    "source_genus": 0
+  },
+  "title": "M23 five-branch colored braid seed component"
+}

@@ -1,0 +1,27 @@
+                 Galois Covers of M23 over Q: A Positive-Dimensional Approach
+             Braid-Orbit Reconstruction, Exact Clutching, Algebraic Collision Tails, and Six-Branch Refinements
+                                Spencer Harkness Bromberg and Alexander Xavier Bromberg
+                                           Revised: August 19, 2026 (June 23, 2026)
+
+
+For M23 ≤ S23 , the ordered passport (2A, 2A, 3A, 5A) has exactly 980 generating inner Nielsen classes in one pure-braid
+orbit and gives a genus-119 cross-ratio cover. The all-orderings orbit has 11,760 states; a free Klein-four quotient gives a
+degree-2940, genus-43 reduced j-line cover with 406 cusps. The real-boundary computation certifies eight individual
+Q-rational boundary points, and B27 = Q[Z]/(Z 27 − Z) supplies the target normal form for the interior fiber-algebra
+criterion.
+   For the five-branch passport (2A, 2A, 2A, 2A, 3A), an independent computation gives a connected 21,456-state colored
+component. All six equal-2A collision divisors have 980 width-five cycles, and admissible-cover clutching identifies every
+normalized width-five component with the complete genus-119 four-branch curve. The released (2A, 23A, 23B) tuple
+admits a generating five-branch refinement. A common six-branch class (2A3 , 3A3 ) joins the two five-branch components
+through an exact 14-move colored braid word and rational collision tails. A generating 2A10 refinement has source genus
+18; an exact 29,005-move B10 word connects its 2 + 4 + 4 contraction to the released three-point tuple, while a separate
+h-equivariant ten-involution refinement fuses by five pairs into the verified five-branch component.
+   The mixed collision boundary is a degree-18, genus-2 cover. On the canonical ten-state cell, the central deck involution
+gives the phase pairing commuting with q1 , while the native return conjugates q1 to q1−1 and yields a dihedral order-10
+action. The associated set-stabilizer base change produces a degree-10 Hurwitz subcover, a degree-5 quotient of genus
+161, and the comparison morphism BH . The carrier β10 (t) = 1 − (1 − t2 )5 quotients to β5 (t) = 1 − (1 − t)5 . The
+width-11 locus consists of four transitive degree-66, genus-zero components paired by an explicit inverse-return involution.
+Pair-clutching and balanced twisted-cover deformation complete the corresponding Q-defined admissible-cover geometry.
+Keywords. Mathieu group M23 ; Hurwitz spaces; Nielsen classes; braid orbits; admissible covers; inverse Galois theory;
+computational group theory.
+

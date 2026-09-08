@@ -1,0 +1,55 @@
+{
+  "all_n_i_even": true,
+  "certificate": "M23_TWIST_TOLERANT_BOUNDARY_NONEXCLUSION",
+  "conclusion": "All multiplier/pair/direction transporter sets are nonempty; peripheral power-conjugacy alone cannot separate either width-one boundary pair.",
+  "elapsed_seconds": 4.979741096496582,
+  "equation_checked": "n_i o s_i = s_i^m o n_i, equivalent to s_i = n_i^-1 s_i^m n_i",
+  "expected_cases": 7680,
+  "geometric_monodromy": "A_980",
+  "modulus": 9240,
+  "normalizer_in_S980": "S_980",
+  "pairs_one_based": {
+    "B13_fixed_pair": [
+      454,
+      914
+    ],
+    "B14_fixed_pair": [
+      634,
+      974
+    ]
+  },
+  "pass": true,
+  "phi_choice": "identity",
+  "sample_witness_hashes": [
+    {
+      "m": 1,
+      "pair": "B13_fixed_pair",
+      "sha256": "65863bde3c61d1b34149b70a9a05f07f14769be0640d3d2eacbbe3fb7d8a1e01",
+      "source": 454,
+      "target": 914
+    },
+    {
+      "m": 1,
+      "pair": "B13_fixed_pair",
+      "sha256": "65863bde3c61d1b34149b70a9a05f07f14769be0640d3d2eacbbe3fb7d8a1e01",
+      "source": 914,
+      "target": 454
+    },
+    {
+      "m": 1,
+      "pair": "B14_fixed_pair",
+      "sha256": "e9aa7554e09075aae0e2ec523049cb2efc81ce5fa62d7ae26cd6967ed2beb591",
+      "source": 634,
+      "target": 974
+    },
+    {
+      "m": 1,
+      "pair": "B14_fixed_pair",
+      "sha256": "e9aa7554e09075aae0e2ec523049cb2efc81ce5fa62d7ae26cd6967ed2beb591",
+      "source": 974,
+      "target": 634
+    }
+  ],
+  "unit_count": 1920,
+  "verified_nonempty_transporter_cases": 7680
+}

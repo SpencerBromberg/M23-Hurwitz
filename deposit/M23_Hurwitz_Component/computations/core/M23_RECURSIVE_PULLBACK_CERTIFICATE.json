@@ -1,0 +1,128 @@
+{
+  "certificate": "M23_RECURSIVE_PULLBACK_CERTIFICATE",
+  "compactified_covers_over_mixed_boundary_base": {
+    "five_sheet_kappa_quotient": {
+      "branch_cycle_histograms": [
+        {
+          "5": 12,
+          "15": 38
+        },
+        {
+          "5": 12,
+          "15": 38
+        },
+        {
+          "3": 210
+        }
+      ],
+      "degree_over_original_base": 630,
+      "genus": 161
+    },
+    "set_stabilizer_base": {
+      "branch_cycle_histograms": [
+        {
+          "1": 1,
+          "5": 4,
+          "15": 7
+        },
+        {
+          "1": 1,
+          "5": 4,
+          "15": 7
+        },
+        {
+          "3": 42
+        }
+      ],
+      "degree": 126,
+      "genus": 31
+    },
+    "ten_sheet_pullback_component": {
+      "branch_cycle_histograms": [
+        {
+          "5": 20,
+          "10": 2,
+          "15": 68,
+          "30": 4
+        },
+        {
+          "5": 20,
+          "10": 2,
+          "15": 68,
+          "30": 4
+        },
+        {
+          "3": 420
+        }
+      ],
+      "degree_over_original_base": 1260,
+      "genus": 327
+    }
+  },
+  "five_pair_quotient": {
+    "induced_stabilizer_quotient_is_S5": true,
+    "induced_stabilizer_quotient_order": 120,
+    "q1_quotient_order": 5
+  },
+  "mixed_boundary": {
+    "center_order": 2,
+    "central_involution_free": true,
+    "degree": 18,
+    "monodromy_order": 92897280
+  },
+  "pass": true,
+  "scope": {
+    "canonical_set_stabilizer_base_change_geometrizes_ten_state_cell": true,
+    "cyclic_beta5_carrier": "distinguished_C5_subcarrier_on_ten_state_fiber",
+    "global_comparison_source": "five_sheet_kappa_quotient_Q_H",
+    "global_comparison_target": "mixed_boundary_quotient_D45_mod_kappa18"
+  },
+  "ten_state_set": {
+    "central_involution_restriction_equals_certified_kappa": true,
+    "cyclic_subgroup_q1_kappa_order": 10,
+    "cyclic_subgroup_transitive": true,
+    "global_states": [
+      5619,
+      5707,
+      10252,
+      11406,
+      13499,
+      15797,
+      17032,
+      18695,
+      20064,
+      21190
+    ],
+    "induced_stabilizer_order": 3840,
+    "induced_stabilizer_transitive": true,
+    "kappa_pairs": [
+      [
+        5619,
+        20064
+      ],
+      [
+        5707,
+        21190
+      ],
+      [
+        10252,
+        11406
+      ],
+      [
+        13499,
+        17032
+      ],
+      [
+        15797,
+        18695
+      ]
+    ],
+    "set_stabilizer_order": 737280,
+    "subset_orbit_size": 126
+  },
+  "typed_duality": {
+    "boundary_kappa_pairs_distinct_hurwitz_states": true,
+    "raw_h_conjugate_dual_representatives_same_inner_key": true,
+    "two_actions_are_distinct_typed_operations": true
+  }
+}

@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the article and accompanying computational release."
+title: "Galois Covers of M23 over Q: A Positive-Dimensional Approach - Braid-Orbit Reconstruction, Exact Clutching, Algebraic Collision Tails, and Six-Branch Refinements"
+type: software
+keywords:
+  - "Mathieu group M23"
+  - "Hurwitz spaces"
+  - "Nielsen classes"
+  - "braid orbits"
+  - "admissible covers"
+  - "inverse Galois theory"
+  - "computational group theory"
+authors:
+  - family-names: "Bromberg"
+    given-names: "Spencer Harkness"
+  - family-names: "Bromberg"
+    given-names: "Alexander Xavier"
+doi: "10.5281/zenodo.22010546"
+url: "https://doi.org/10.5281/zenodo.22010546"
+date-released: 2026-08-19
+preferred-citation:
+  type: article
+  title: "Galois Covers of M23 over Q: A Positive-Dimensional Approach - Braid-Orbit Reconstruction, Exact Clutching, Algebraic Collision Tails, and Six-Branch Refinements"
+  authors:
+    - family-names: "Bromberg"
+      given-names: "Spencer Harkness"
+    - family-names: "Bromberg"
+      given-names: "Alexander Xavier"
+  year: 2026
+  doi: "10.5281/zenodo.22010546"

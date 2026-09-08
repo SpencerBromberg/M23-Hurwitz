@@ -1,0 +1,52 @@
+\begin{proposition}[Color-diagonal census and inverse-reversal]
+Let $\Omega'$ be the $21{,}456$-element colored Nielsen component for
+$(2A,2A,2A,2A,3A)$.  Let $q_1,q_2,q_3$ be the three adjacent
+same-color Hurwitz generators and let $m=q_4^2$ be the adjacent
+mixed-color collision operator.  Then
+\[
+\operatorname{ct}(q_i)=1^{24}2^{292}3^{796}4^{1248}5^{980}6^{1428}
+\qquad (i=1,2,3),
+\]
+and
+\[
+\operatorname{ct}(m)=1^{18}2^{468}3^{582}4^{984}5^{900}
+7^{840}8^{192}11^{264}.
+\]
+Hence each same-color width-$5$ locus contains exactly
+$5\cdot980=4900$ states.  Among the $18$ fixed states of $m$, the
+$q_1$- and $q_2$-width distributions are
+\[
+2^2,\qquad 3^6,\qquad 5^{10},
+\]
+so each of the two corresponding color-diagonal cells has exactly ten
+states.  The $q_3$-width distribution on $\operatorname{Fix}(m)$ is
+$4^5 6^{13}$, so that cell is empty.
+
+Define the color-preserving inverse-reversal involution by
+\[
+c(g_1,g_2,g_3,g_4,g_5)
+=(g_4^{-1},g_3^{-1},g_2^{-1},g_1^{-1},g_5^{-1}).
+\]
+It acts on all of $\Omega'$, satisfies $c^2=1$, and has $42$ fixed
+states.  It conjugates
+\[
+cq_1c=q_3^{-1},\qquad cq_2c=q_2^{-1},\qquad cq_3c=q_1^{-1}.
+\]
+A chosen ten-state diagonal cell is therefore carried to a distinct
+conjugate ten-state cell.  After including all six same-color pair
+collisions and all four mixed-color pair collisions, the complete
+color-diagonal set has $60$ states.  It is $c$-stable and $c$ acts on
+it without fixed points, as $30$ transpositions.
+\end{proposition}
+
+\begin{proof}
+Canonical simultaneous relabeling reconstructs the complete colored
+orbit from the printed five-tuple.  Direct cycle decomposition gives
+the two displayed passports.  Intersecting the fixed set of each mixed
+collision operator with the width-$5$ states of each same-color
+collision operator gives twelve empty cells, four cells of size four,
+and eight cells of size ten; their union contains $60$ states.  Direct
+application of $c$ to the canonical states verifies the conjugation
+relations, $c^2=1$, and the absence of a fixed state on the complete
+color-diagonal union.
+\end{proof}

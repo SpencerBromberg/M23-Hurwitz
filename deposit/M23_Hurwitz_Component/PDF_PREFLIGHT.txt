@@ -1,0 +1,6 @@
+PDF: M23_Hurwitz_Component.pdf
+Pages: 30
+Encrypted: False
+Openable (PyMuPDF): True
+Likely scanned: False
+XFA present: False

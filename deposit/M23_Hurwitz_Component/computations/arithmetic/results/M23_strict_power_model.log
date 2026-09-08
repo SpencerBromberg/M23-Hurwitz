@@ -1,0 +1,16 @@
+M23_STRICT_POWER_MODEL_CERTIFICATE
+PASS True
+SCOPE finite rooted colored-digraph theorem for the strict relations Phi*s_ij=s_ij^m*Phi, with exact simultaneous centralizer; arithmetic transport uses the separate normalizer-power-conjugacy criterion
+ORBIT_SIZE 980
+OPERATOR_ORDERS [30, 9240, 9240]
+FIXED_POINTS_ONE_BASED [[1, 96, 118, 162, 236, 249, 299, 381, 398, 506, 508, 535, 542, 554, 562, 579, 581, 600, 602, 625, 785, 788, 804, 956], [454, 914], [634, 974]]
+COMMON_POWER_MODULUS 9240
+UNIT_COUNT 1920
+AUDITED_PAIRS_ONE_BASED {'B13_fixed_pair': [454, 914], 'B14_fixed_pair': [634, 974]}
+TESTS_PER_PAIR {'B13_fixed_pair': 3840, 'B14_fixed_pair': 3840}
+TOTAL_TESTS 7680
+SIMULTANEOUS_CENTRALIZER_ORDER 1
+SIMULTANEOUS_CENTRALIZER_ROOT_IMAGES_ONE_BASED [1]
+FIRST_TWO_GENERATORS_COMMUTE False
+TOTAL_SUCCESSES 0
+FAILED_CHECKS []

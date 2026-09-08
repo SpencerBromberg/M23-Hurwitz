@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Pone}{\mathbb P^1}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\Disc}{\operatorname{Disc}}
+\newcommand{\Norm}{\operatorname{Norm}}
+\title{The Explicit Algebraic Reconstruction Model for the\\Degree-$980$, Genus-$119$ Ordered $M_{23}$ Hurwitz Curve}
+\author{Spencer Harkness Bromberg}
+\date{15 July 2026}
+\begin{document}
+\maketitle
+
+\section*{1. The global coefficient equations}
+Assign the branch classes by
+\[
+ 3A\mapsto0,\qquad 2A\mapsto1,\qquad 5A\mapsto\infty,
+ \qquad 2A\mapsto\lambda.
+\]
+The natural degree-$23$ action has cycle shapes
+\[
+ 3A:1^5 3^6,\qquad 2A:1^7 2^8,\qquad 5A:1^3 5^4.
+\]
+Use the rational coefficient gauge
+\begin{align*}
+ A_3&=x^6+a_4x^4+a_3x^3+a_2x^2+a_1x+a_0,\\
+ A_1&=x^5+\alpha_4x^4+\alpha_3x^3+\alpha_2x^2+\alpha_1x+\alpha_0,\\
+ Q_5&=x^4+q_2x^2+q_1x+q_0,\\
+ Q_1&=r_3x^3+r_2x^2+r_1x+r_0,\\
+ B_2&=x^8+b_6x^6+b_5x^5+b_4x^4+b_3x^3+b_2x^2+b_1x+b_0,\\
+ B_1&=s_7x^7+s_6x^6+s_5x^5+s_4x^4+s_3x^3+s_2x^2+s_1x+s_0,\\
+ C_2&=x^8+c_7x^7+c_6x^6+c_5x^5+c_4x^4+c_3x^3+c_2x^2+c_1x+c_0,\\
+ C_1&=t_7x^7+t_6x^6+t_5x^5+t_4x^4+t_3x^3+t_2x^2+t_1x+t_0.
+\end{align*}
+There are exactly $48$ coefficient variables.  Put
+\[
+ p=A_3^3A_1,\qquad q=Q_5^5Q_1.
+\]
+For $0\le k\le23$, define
+\begin{align*}
+ E_k&=[x^k]\bigl(p-q-B_2^2B_1\bigr),\\
+ E_{24+k}&=[x^k]\bigl(p-\lambda q-C_2^2C_1\bigr).
+\end{align*}
+Thus the universal ordered-cover locus is cut out by the explicit square system
+\[
+ \boxed{E_0=E_1=\cdots=E_{47}=0.}
+\]
+Every equation is expanded in the accompanying files
+\texttt{M23\_universal\_equations\.txt} and
+\texttt{M23\_universal\_equations\.json}.
+
+Let $\Delta$ be
+\[
+ \lambda(\lambda-1)r_3s_7t_7
+ \prod_{F\in\mathcal F}\Disc_x(F)
+ \prod_{\substack{F,G\in\mathcal F\\F<G}}\Res_x(F,G),
+ \qquad
+ \mathcal F=\{A_3,A_1,Q_5,Q_1,B_2,B_1,C_2,C_1\}.
+\]
+The saturated interior ideal is
+\[
+ I^{\circ}=\langle E_0,\ldots,E_{47}\rangle:\Delta^\infty.
+\]
+Saturation removes repeated roots, cross-fiber collisions, vanishing leading
+coefficients, common factors, and the boundary values $\lambda=0,1$.
+
+\section*{2. The $M_{23}$ component and its equation}
+Let $X_{M_{23}}$ be the unique irreducible component of
+$\Spec\Q[\lambda,\mathbf z]/I^{\circ}$ whose geometric branch tuple belongs
+to the certified transitive Nielsen orbit for $(2A,2A,3A,5A)$, where
+$\mathbf z$ is the displayed $48$-tuple of coefficients.  Let
+\[
+ C=\Norm\bigl(\overline{X}_{M_{23}}\bigr)
+\]
+be the smooth projective normalization.
+
+\begin{theorem}[Exact curve and map]
+The ordered Hurwitz curve is the normalization $C$ of the explicitly defined
+saturated component above.  Its canonical base-coordinate map is
+\[
+ \boxed{\beta:C\longrightarrow\Pone_\lambda,\qquad
+        \beta(\lambda,\mathbf z)=[\lambda:1].}
+\]
+The map has degree $980$ and the source has genus $119$.
+\end{theorem}
+
+\begin{proof}
+The two polynomial identities encode the four required ramification fibers,
+and saturation restricts to smooth four-branch-point covers.  The certified
+Nielsen computation identifies one transitive component containing exactly
+$980$ ordered cover classes above a generic value of $\lambda$.  Therefore
+projection to $\lambda$ has degree $980$.  Its peripheral cycle counts are
+$368,188,188$, hence its indices are $612,792,792$.  Riemann--Hurwitz gives
+\[
+ 2g(C)-2=-2\cdot980+612+792+792=236,
+\]
+so $g(C)=119$.
+\end{proof}
+
+A plane eliminant is obtained without introducing a $980$-dimensional source
+algebra.  Choose a primitive element $u\in\Q(X_{M_{23}})$ over $\Q(\lambda)$
+and define
+\[
+ \boxed{
+ (H(\lambda,u))=
+ \bigl(I_{M_{23}}+\langle u-L(\mathbf z)\rangle\bigr)
+ \cap\Q[\lambda,u],
+ }
+\]
+where $L$ is a separating linear form and $H$ is made primitive and
+squarefree.  Then
+\[
+ C\dashrightarrow\{H(\lambda,u)=0\},\qquad
+ \beta(\lambda,u)=\lambda,
+\]
+is birational, and
+\[
+ \deg_u H=980.
+\]
+This is the exact elimination definition of the requested plane equation.
+The expanded coefficient list requires the saturation, primary-component
+selection, and elimination themselves; the current files contain the exact
+input system and do not substitute generator images or relation checks for
+that calculation.
+
+\section*{3. Wronskian closure}
+On the saturated interior locus,
+\[
+ \boxed{
+ p'q-pq'=cA_3^2B_2C_2Q_5^4,
+ \qquad c\ne0.
+ }
+\]
+Both sides have degree $44=2\cdot23-2$.  This identity certifies that the four
+displayed fibers exhaust the ramification and supplies the decisive rejection
+test after elimination.
+
+\section*{4. The line-966 chart}
+The line-966 construction
+\[
+ F=4qL^2M^6-xA^{10}B^2-R^2V,
+ \qquad
+ R=AB\bigl(2x(L'M+3LM')-LM\bigr)-2xLM\bigl(5A'B+AB'\bigr)
+\]
+is the $17$-variable released $211$-adic local chart.  Its identity
+\[
+ P'Q-PQ'=4qA^9BLM^5R
+\]
+provides a normalized local Wronskian coordinate.  It is a chart inside the
+reconstruction problem.  The global curve is governed by the universal
+$48$-equation system above.
+
+\end{document}

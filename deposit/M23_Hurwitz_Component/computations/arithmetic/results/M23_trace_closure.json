@@ -1,0 +1,204 @@
+{
+  "certificate": "M23_TRACE_CLOSURE",
+  "checks": {
+    "address_only_values_not_group_orders": true,
+    "box_orbits_1_4_4": true,
+    "box_reynolds_rank_three": true,
+    "box_rotation_order_four": true,
+    "box_unique_fixed_cell": true,
+    "c5_frobenius_fixed": true,
+    "c5_scalings_nonzero": true,
+    "c5_trace_nonzero": true,
+    "c_commutes_gamma1": true,
+    "c_conjugates_gamma_inf_to_inverse": true,
+    "c_cycle_type": true,
+    "cusp_cycle_action": true,
+    "cusp_fixed_sizes": true,
+    "elliptic_cycle_action": true,
+    "elliptic_fixed_cycle_split": true,
+    "finite_field_discriminant_square": true,
+    "finite_field_roots": true,
+    "inverse_127": true,
+    "inverse_chart_discriminant": true,
+    "inverse_chart_roots": true,
+    "order_spectrum_and_address_set_distinct": true,
+    "reduced_degree_2940": true,
+    "trace_c_82": true,
+    "trace_c_gamma1_6": true,
+    "trace_c_gamma_inf_6": true
+  },
+  "conclusion": "All supplied trace combinations are computed. The Reynolds/field-trace projector has an invariant line, but the selected F_211 obstruction is Frobenius-fixed and has nonzero field trace. The 127 chart change preserves that nonvanishing. A rank-one invariant linear projector is therefore kept distinct from a rank-one central idempotent of an interior fiber algebra.",
+  "cusp_cycle_action": {
+    "action_cycle_type": {
+      "1": 44,
+      "2": 181
+    },
+    "cycle_count": 406,
+    "fixed_cycle_sizes": {
+      "10": 8,
+      "3": 6,
+      "4": 15,
+      "6": 8,
+      "8": 7
+    },
+    "pointwise_fixed_cycles": 0,
+    "setwise_fixed_cycles": 44
+  },
+  "elliptic_cycle_action": {
+    "action_cycle_type": {
+      "1": 44,
+      "2": 713
+    },
+    "cycle_count": 1470,
+    "fixed_cycle_sizes": {
+      "2": 44
+    },
+    "pointwise_fixed_cycles": 41,
+    "setwise_fixed_cycles": 44
+  },
+  "finite_field_quadratic": {
+    "discriminant": 5,
+    "inverse_127": 108,
+    "inverse_chart_discriminant": 84,
+    "inverse_chart_roots": [
+      188,
+      131
+    ],
+    "polynomial": "X^2-X-1",
+    "roots_mod_211": [
+      33,
+      179
+    ],
+    "sqrt_discriminant": 65
+  },
+  "pass": true,
+  "reduced_trace_table": {
+    "cycle_type(c gamma_1)": {
+      "1": 6,
+      "2": 1467
+    },
+    "cycle_type(c gamma_infinity)": {
+      "1": 6,
+      "2": 1467
+    },
+    "tr(c gamma_1)": 6,
+    "tr(c gamma_infinity)": 6,
+    "tr(c)": 82
+  },
+  "reference_box": {
+    "orbit_sizes": [
+      1,
+      4,
+      4
+    ],
+    "reynolds_projector_rank": 3,
+    "rotation_cycle_type": {
+      "1": 1,
+      "4": 2
+    },
+    "unique_fixed_cell": [
+      0,
+      0
+    ]
+  },
+  "selected_obstruction": {
+    "108_c5": [
+      83,
+      59,
+      209,
+      75,
+      51,
+      23,
+      122,
+      210,
+      80,
+      183,
+      6,
+      165
+    ],
+    "127_c5": [
+      123,
+      1,
+      25,
+      12,
+      101,
+      29,
+      163,
+      118,
+      55,
+      139,
+      136,
+      153
+    ],
+    "c5": [
+      202,
+      108,
+      168,
+      30,
+      147,
+      178,
+      91,
+      84,
+      32,
+      31,
+      129,
+      66
+    ],
+    "field_trace_c5": [
+      193,
+      5,
+      125,
+      60,
+      83,
+      145,
+      182,
+      168,
+      64,
+      62,
+      47,
+      132
+    ],
+    "frobenius_c5": [
+      202,
+      108,
+      168,
+      30,
+      147,
+      178,
+      91,
+      84,
+      32,
+      31,
+      129,
+      66
+    ]
+  },
+  "sets": {
+    "M23_element_orders_natural_action": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11,
+      14,
+      15,
+      23
+    ],
+    "external_address_set_C": [
+      2,
+      3,
+      5,
+      7,
+      13,
+      17,
+      19,
+      31,
+      61,
+      127
+    ]
+  }
+}

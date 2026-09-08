@@ -1,0 +1,257 @@
+{
+  "certificate": "M23_FULL_REDUCED_JLINE_CERTIFICATE",
+  "checks": {
+    "980_states_per_ordering": true,
+    "full_orbit_size_11760": true,
+    "gamma_cycle_types": true,
+    "gamma_orders": true,
+    "gamma_product_one": true,
+    "q1_q2_q1_equals_q2_q1_q2": true,
+    "q1_q3_commute": true,
+    "q2_q3_q2_equals_q3_q2_q3": true,
+    "q_double_prime_action_free": true,
+    "q_double_prime_generators_are_involutions": true,
+    "q_double_prime_generators_commute": true,
+    "reduced_action_transitive": true,
+    "reduced_degree_2940": true,
+    "reduced_genus_43": true,
+    "symmetrized_slice_identification": true,
+    "three_ordering_colors": true,
+    "twelve_class_orderings": true
+  },
+  "component_sizes": [
+    2940
+  ],
+  "cusp_count": 406,
+  "elliptic_fibers": {
+    "classical_j_1728_points": 1470,
+    "classical_j_1728_ramification_index": 2,
+    "normalized_j_0_points": 980,
+    "normalized_j_0_ramification_index": 3
+  },
+  "environment": {
+    "platform": "Linux-4.4.0-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "script_sha256": "d01cf52a1fb1e9db744bb3d59090f33a3c2dcddf2a36e3cd1a56212716ddc8c4",
+    "sympy": "1.14.0"
+  },
+  "full_all_orderings_orbit_size": 11760,
+  "gamma_cycle_counts": [
+    980,
+    1470,
+    406
+  ],
+  "gamma_cycle_types": [
+    {
+      "3": 980
+    },
+    {
+      "2": 1470
+    },
+    {
+      "2": 14,
+      "3": 38,
+      "4": 89,
+      "5": 30,
+      "6": 86,
+      "8": 41,
+      "10": 46,
+      "14": 38,
+      "16": 12,
+      "22": 12
+    }
+  ],
+  "gamma_indices": [
+    1960,
+    1470,
+    2534
+  ],
+  "gamma_names": [
+    "gamma0=q1 q2",
+    "gamma1=sh=q1 q2 q1",
+    "gamma_infinity=q2"
+  ],
+  "gamma_orders": [
+    3,
+    2,
+    18480
+  ],
+  "gamma_product_one": true,
+  "genus": 43,
+  "minimum_cusp_width": 2,
+  "operator_sha256": [
+    "260fa65e5a352b777dd4a293600fb745084c5352b015c7b942759d505af67299",
+    "1dc74472842acbec54cd8f7607b28db86047ae96841180139cce33c91a414796",
+    "b7070dd3ff9074451d5565cb091b5f77f49673506eed324e72d5863a2b53f229"
+  ],
+  "ordering_colors": {
+    "actions": {
+      "gamma0": {
+        "0": 1,
+        "1": 2,
+        "2": 0
+      },
+      "gamma1": {
+        "0": 2,
+        "1": 1,
+        "2": 0
+      },
+      "gamma_infinity": {
+        "0": 1,
+        "1": 0,
+        "2": 2
+      }
+    },
+    "count": 3,
+    "representatives": [
+      [
+        [
+          2,
+          2,
+          3,
+          5
+        ],
+        [
+          2,
+          2,
+          5,
+          3
+        ],
+        [
+          3,
+          5,
+          2,
+          2
+        ],
+        [
+          5,
+          3,
+          2,
+          2
+        ]
+      ],
+      [
+        [
+          2,
+          3,
+          2,
+          5
+        ],
+        [
+          2,
+          5,
+          2,
+          3
+        ],
+        [
+          3,
+          2,
+          5,
+          2
+        ],
+        [
+          5,
+          2,
+          3,
+          2
+        ]
+      ],
+      [
+        [
+          2,
+          3,
+          5,
+          2
+        ],
+        [
+          2,
+          5,
+          3,
+          2
+        ],
+        [
+          3,
+          2,
+          2,
+          5
+        ],
+        [
+          5,
+          2,
+          2,
+          3
+        ]
+      ]
+    ],
+    "sizes": {
+      "0": 980,
+      "1": 980,
+      "2": 980
+    }
+  },
+  "ordering_count": 12,
+  "pass": true,
+  "q_double_prime": {
+    "commute": true,
+    "free": true,
+    "generator_orders": [
+      2,
+      2
+    ],
+    "generators": [
+      "q1 q3^-1",
+      "sh^2"
+    ],
+    "orbit_count": 2940,
+    "orbit_sizes": {
+      "4": 2940
+    }
+  },
+  "reduced_degree": 2940,
+  "scope": "full Hurwitz-braid orbit across all class orderings, quotient by Q''=<q1 q3^-1, sh^2>, and the resulting reduced j-line monodromy",
+  "states_per_ordering": {
+    "(2, 2, 3, 5)": 980,
+    "(2, 2, 5, 3)": 980,
+    "(2, 3, 2, 5)": 980,
+    "(2, 3, 5, 2)": 980,
+    "(2, 5, 2, 3)": 980,
+    "(2, 5, 3, 2)": 980,
+    "(3, 2, 2, 5)": 980,
+    "(3, 2, 5, 2)": 980,
+    "(3, 5, 2, 2)": 980,
+    "(5, 2, 2, 3)": 980,
+    "(5, 2, 3, 2)": 980,
+    "(5, 3, 2, 2)": 980
+  },
+  "symmetrized_slice": {
+    "beta13_cycle_type": {
+      "1": 2,
+      "2": 21,
+      "3": 16,
+      "4": 41,
+      "5": 46,
+      "7": 38,
+      "8": 12,
+      "11": 12
+    },
+    "beta3_cycle_type": {
+      "2": 12,
+      "3": 38,
+      "4": 68,
+      "5": 30,
+      "6": 70
+    },
+    "color": 2,
+    "eta23_cycle_type": {
+      "2": 490
+    },
+    "ordering": [
+      3,
+      2,
+      2,
+      5
+    ],
+    "product_one": true,
+    "size": 980
+  }
+}

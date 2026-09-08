@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Compiled certificate binaries
+*.o
+*.so
+*.exe
+a.out
+verify
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# LaTeX build output (scoped to the deposit root only:
+# computations/**/*.log and *.out are recorded certificate outputs and are tracked)
+*.aux
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+deposit/M23_Hurwitz_Component/*.log
+deposit/M23_Hurwitz_Component/*.out

@@ -1,0 +1,36 @@
+{
+  "certificate": "M23_COMPARISON_MORPHISM_CERTIFICATE",
+  "cyclic_subcarrier": {
+    "genus": 0,
+    "group_order": 5,
+    "model": "beta_5(t)=1-(1-t)^5",
+    "passport": [
+      "1^5",
+      "5",
+      "5"
+    ],
+    "role": "cyclic order-5 subcarrier on the distinguished ten-state fiber"
+  },
+  "global_comparison": {
+    "equivariance_hypothesis_verified": true,
+    "morphism_name": "B_H",
+    "quotient_descent_applies": true,
+    "source": "Q_H = L_10,H/<kappa>",
+    "source_genus": 161,
+    "target": "D_45/<kappa_18>"
+  },
+  "pass": true,
+  "supporting_finite_data": {
+    "central_involution_restricts_to_kappa": true,
+    "five_pair_quotient_group": "S5",
+    "five_pair_quotient_group_order": 120,
+    "ten_state_induced_stabilizer_order": 3840,
+    "ten_state_set_stabilizer_order": 737280,
+    "ten_state_subset_orbit_size": 126
+  },
+  "typed_sources": {
+    "cyclic_genus_zero_carrier": "Lbar",
+    "global_and_cyclic_levels_recorded_separately": true,
+    "global_comparison_curve": "Q_H"
+  }
+}

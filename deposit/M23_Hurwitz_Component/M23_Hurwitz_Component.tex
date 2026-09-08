@@ -1,0 +1,1722 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[letterpaper,left=1in,right=1in,top=0.68in,bottom=0.68in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,amscd}
+\usepackage{mathrsfs}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\allowdisplaybreaks
+\setlength{\parskip}{0.18em}
+\setlength{\parindent}{1.2em}
+\setlength{\emergencystretch}{2em}
+\setlength{\abovedisplayskip}{7pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{7pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{4pt plus 2pt}
+\setlength{\belowdisplayshortskip}{5pt plus 2pt minus 1pt}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Pone}{\mathbb P^1}
+\newcommand{\M}{M_{23}}
+\newcommand{\Ni}{\operatorname{Ni}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\indp}{\operatorname{ind}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\GQ}{G_{\Q}}
+\newcommand{\ct}{\operatorname{ct}}
+
+\Urlmuskip=0mu plus 1mu
+
+\hypersetup{
+  pdftitle={Galois Covers of M23 over Q: A Positive-Dimensional Approach - Braid-Orbit Reconstruction, Exact Clutching, Algebraic Collision Tails, and Six-Branch Refinements},
+  pdfauthor={Spencer Harkness Bromberg and Alexander Xavier Bromberg},
+  pdfsubject={Positive-dimensional Hurwitz geometry for M23: braid-orbit reconstruction, exact clutching, collision tails, and six-branch refinements},
+  pdfkeywords={Mathieu group M23; Hurwitz spaces; Nielsen classes; braid orbits; admissible covers; inverse Galois theory; computational group theory},
+}
+
+\begin{document}
+\begin{center}
+{\large\bfseries Galois Covers of $M_{23}$ over $\mathbb Q$: A Positive-Dimensional Approach\par}
+\vspace{0.12em}
+{\small Braid-Orbit Reconstruction, Exact Clutching, Algebraic Collision Tails, and Six-Branch Refinements\par}
+\vspace{0.35em}
+{\footnotesize Spencer Harkness Bromberg and Alexander Xavier Bromberg\par}
+\vspace{0.10em}
+{\footnotesize Revised: August 19, 2026 (June 23, 2026)\par}
+\end{center}
+\vspace{0.22em}
+
+\begin{abstract}
+For $M_{23}\leq S_{23}$, the ordered passport $(2A,2A,3A,5A)$ has exactly $980$ generating inner Nielsen classes in one pure-braid orbit and gives a genus-$119$ cross-ratio cover.  The all-orderings orbit has $11{,}760$ states; a free Klein-four quotient gives a degree-$2940$, genus-$43$ reduced $j$-line cover with $406$ cusps.  The real-boundary computation certifies eight individual $\Q$-rational boundary points, and $B_{27}=\Q[Z]/(Z^{27}-Z)$ supplies the target normal form for the interior fiber-algebra criterion.
+
+For the five-branch passport $(2A,2A,2A,2A,3A)$, an independent computation gives a connected $21{,}456$-state colored component.  All six equal-$2A$ collision divisors have $980$ width-five cycles, and admissible-cover clutching identifies every normalized width-five component with the complete genus-$119$ four-branch curve.  The released $(2A,23A,23B)$ tuple admits a generating five-branch refinement.  A common six-branch class $(2A^3,3A^3)$ joins the two five-branch components through an exact $14$-move colored braid word and rational collision tails.  A generating $2A^{10}$ refinement has source genus $18$; an exact $29{,}005$-move $B_{10}$ word connects its $2+4+4$ contraction to the released three-point tuple, while a separate $h$-equivariant ten-involution refinement fuses by five pairs into the verified five-branch component.
+
+The mixed collision boundary is a degree-$18$, genus-$2$ cover.  On the canonical ten-state cell, the central deck involution gives the phase pairing commuting with $q_1$, while the native return conjugates $q_1$ to $q_1^{-1}$ and yields a dihedral order-$10$ action.  The associated set-stabilizer base change produces a degree-$10$ Hurwitz subcover, a degree-$5$ quotient of genus $161$, and the comparison morphism $\mathfrak B_H$.  The carrier $\beta_{10}(t)=1-(1-t^2)^5$ quotients to $\beta_5(t)=1-(1-t)^5$.  The width-$11$ locus consists of four transitive degree-$66$, genus-zero components paired by an explicit inverse-return involution.  Pair-clutching and balanced twisted-cover deformation complete the corresponding $\Q$-defined admissible-cover geometry.
+\end{abstract}
+
+\noindent\textbf{Keywords.} Mathieu group $M_{23}$; Hurwitz spaces; Nielsen classes; braid orbits; admissible covers; inverse Galois theory; computational group theory.
+
+\section{Introduction}
+
+The inverse Galois problem asks whether a finite group occurs as the Galois group of a finite extension of $\Q$, and more strongly whether it occurs regularly over $\Q(t)$.  Huang, Jackson, Lee, Poonen, Pries, and Zhang proved the case of $M_{23}$ through the non-rigid three-point class triple
+\[
+ (2A,23A,23B).
+\]
+Their Nielsen class has seven elements, the associated degree-$23$ quotient curve has genus $4$, and their reconstruction yields an explicit regular $M_{23}$-extension over $\Q(t)$ together with explicit degree-$23$ specializations over $\Q$ \cite{HuangEtAl}.
+
+The class vector
+\[
+ \mathbf C_4=(2A,2A,3A,5A)
+\]
+defines a positive-dimensional Hurwitz problem with a degree-$980$, genus-$119$ ordered component.  The five-branch vector
+\[
+ \mathbf C_5=(2A,2A,2A,2A,3A)
+\]
+defines a $21{,}456$-state colored component whose width-five boundary returns the four-branch curve.  The explicit three-point tuple also admits a five-branch refinement of type $(2A,3A,3A,3A,3A)$.  A six-branch common refinement and a ten-involution refinement connect these constructions through exact braid and clutching maps.
+
+H\"afner records the numerical invariants $980$ and $119$ for the four-branch component \cite{Haefner}.  The computations below independently reconstruct the complete four-branch generating Nielsen class, determine the ordered and reduced permutation geometry, reconstruct the $21{,}456$-state five-branch component, prove the full six-direction width-five boundary by exact clutching and equal-class braid symmetry, construct the six- and ten-branch common refinements, and give explicit rational models for all collision tails used in those refinements.
+
+The all-orderings orbit has $11{,}760$ states, and its free Klein-four quotient has degree $2940$, genus $43$, and $406$ cusps.  The real-boundary computation identifies eight individual $\Q$-rational boundary points, while the degree-$27$ algebra $B_{27}$ supplies the target normal form for the interior fiber-algebra criterion.  At the five-branch boundary, the exact finite calculations also isolate the degree-$18$, genus-$2$ mixed carrier, the canonical ten-state stabilizer pullback, and the four degree-$66$, genus-zero width-$11$ components.
+
+For broader inverse-Galois background and braid methods, see \cite{MalleMatzat}; for explicit Hurwitz-space computation in the Mathieu setting, see \cite{Koenig}.  Fields of definition of Hurwitz components are treated in \cite{Seguin}.  The admissible-cover compactification originates in \cite{HarrisMumford} and is used below through the balanced twisted-cover and Hurwitz-space frameworks of \cite{AbramovichCortiVistoli,Wewers}.
+
+The cyclic degree-five cover
+\[
+ \beta_5(t)=1-(1-t)^5
+\]
+contributes a finite \'etale fixed/dual structure.  Its zero fiber contains a canonical rational direct factor and a complementary cyclotomic factor with quadratic inversion quotient.  The canonical ten-state cell has two exact involutions with distinct roles.  The phase pairing
+\[
+ \kappa_{\mathrm{pair}}(n,p)=(n,p+1)
+\]
+commutes with $q_1(n,p)=(n+1,p)$, agrees with the restriction of the central deck involution after the canonical set-stabilizer base change, and gives the algebraic model $\beta_{10}(t)=1-(1-t^2)^5\to\beta_5$.  The native braid return
+\[
+ \kappa_{\mathrm{ret}}(n,p)=(1-n,p+1)
+\]
+conjugates $q_1$ to $q_1^{-1}$ and supplies the dihedral ten-state return action.  The mixed boundary has degree $18$ and genus $2$; its width-$11$ locus consists of four degree-$66$, genus-zero components paired by an explicit inverse-return involution.  The ten-state set-stabilizer pullback, pair-clutching, and balanced-node deformation theory supply the corresponding global boundary and admissible-cover geometry.
+
+\paragraph{Chronology and independence.}
+The four-branch reconstruction, reduced $j$-line computation, boundary analysis, five-branch component, clutching calculations, and coefficient systems were developed independently of the construction of Huang, Jackson, Lee, Poonen, Pries, and Zhang.  Their public announcement on August 9, 2026 \cite{HuangEtAl} prompted comparison with the released $(2A,23A,23B)$ tuple.  The resulting five-branch refinement, six-branch comparison bridge, and ten-involution comparison layer are identified explicitly in \cref{sec:mobility}; each takes the published tuple of \cite{HuangEtAl} as input.  The present article is offered as a complementary study of the positive-dimensional Hurwitz geometry.
+
+\subsection{Main verified result}
+
+\begin{theorem}[Verified Hurwitz geometry]\label{thm:main}
+The following statements hold.
+\begin{enumerate}[label=\textnormal{(\roman*)},leftmargin=2.4em]
+\item The ordered inner and absolute Nielsen classes of type $(2A,2A,3A,5A)$ coincide, contain exactly $980$ generating classes, and form one pure-braid orbit.
+\item The ordered cross-ratio cover has degree $980$ and genus $119$.  Its boundary passport gives a $\Q$-rational divisor of degree one, hence index and period one.  The real-boundary verification certifies eight individual $\Q$-rational boundary points, while the width-one degree-two divisors over $\lambda=1$ and $\lambda=\infty$ are imaginary quadratic.
+\item The full all-orderings braid orbit has $11{,}760$ states.  A free Klein-four quotient has degree $2940$, genus $43$, and $406$ cusps.  Its reduced elliptic monodromy over $j=1728$ is fixed-point-free of type $2^{1470}$.
+\item The colored five-branch component of type $(2A,2A,2A,2A,3A)$ has $21{,}456$ states.  All six collision divisors among the four equal $2A$ labels carry $980$ width-five cycles, and clutching gives a bijection from each width-five stratum to the complete four-branch Nielsen class.
+\item The four- and five-branch ramification constraints admit exact universal coefficient systems with respectively $48$ and $72$ coefficient equations.  The $27$-dimensional finite \'etale algebra $B_{27}=\Q[Z]/(Z^{27}-Z)$ is an exact target normal form for interior-fiber activation, with three rational rank-one trace-one projectors.  Component selection and source activation use the Nielsen data and a genuine degree-$980$ interior fiber algebra.
+\item The released three-point tuple of type $(2A,23A,23B)$ has an exact generating five-branch refinement of type $(2A,3A,3A,3A,3A)$.  For either printed $23$-element, there are exactly $138$ ordered $3A\cdot3A$ factorizations; the ordered types $2A\cdot2A$, $2A\cdot3A$, and $3A\cdot2A$ each have factorization count zero.
+\item The two five-branch components admit a common six-branch refinement of type $(2A^3,3A^3)$.  Within refinements using local classes in $\{2A,3A\}$ and one elementary fusion on each side, six branches are minimal.  The two specified collision faces land in the verified five-branch component and in the five-branch component containing the refinement of the released three-point tuple, respectively.
+\item Both collision faces admit explicit $\Q$-defined genus-zero tail models whose restricted passports agree exactly with the degree-$23$ permutation data.
+\item On the mixed boundary with normal inertia $q_4^2$, the fixed fiber has $18$ states and boundary monodromy group of order $92{,}897{,}280$.  Its unique nontrivial central deck involution acts freely on the $18$-sheet geometric fiber $F_{45}$.  The ten-state subset $R_{10}$ has an orbit of $126$ subsets; its set stabilizer has order $737{,}280$ and acts transitively on $R_{10}$ through a group of order $3840$.  The corresponding degree-$126$ finite \'etale base change produces a connected degree-$10$ Hurwitz subcover.  The central deck involution restricts exactly to $\kappa_{\mathrm{pair}}$ on $R_{10}$, and the connected degree-$5$ quotient has induced group $S_5$.  Quotient descent gives the comparison morphism $\mathfrak B_H$ of \cref{thm:comparison-morphism-final}.  The compactified base-change curve, ten-sheet subcover, and five-sheet quotient have genera $31$, $327$, and $161$, respectively.
+\item The target five-branch seed admits a product-one generating $2A^{10}$ refinement of source genus $18$.  A $29{,}005$-move $B_{10}$ word reaches a ten-tuple whose $2+4+4$ contraction is simultaneously conjugate to the released three-point tuple.  Separately, the released tuple admits a ten-involution refinement equivariant under the explicit branch-cycle involution induced by $h$, and its five-pair fusion lies in the verified target five-branch component.
+\item A second $h$-equivariant refinement, obtained by nine local $B_4$ moves, fuses to a generating $(2A,2A,3A,2A,2A)$ tuple in the verified target component by a nine-move $B_5$ word.  One refined leaf $a$ has $\ord(ha)=5$; with $r=ha$, exactly three $x\in C_{M_{23}}(h)$ satisfy $x^2=h$ and $x^{-1}rx=r^2$, giving $D_{10}<F_{20}$.  The stabilized markings realize the independent $(\bmod 5)$ multiplier-$2$ action and the $(\bmod 3)$ inversion by swapping the unique ordered $2A\cdot2A\to3A$ pair.
+\item For a fixed $2A$ element, the ordered factorization spaces satisfy
+\[
+ 3A\cdot3A:\ 1344+896+224+224,
+ \qquad
+ 2A\cdot2A:\ 84+14
+\]
+under the corresponding centralizer actions.  The five pair-fusion tails of the branch-cycle-equivariant refinement have arithmetic-genus contributions $4,4,2,4,4$ and explicit rational local models.
+\item The zero fiber of $\beta_5$ is the finite \'etale scheme
+\[
+ \Spec\Q\ \sqcup\ \Spec\Q(\zeta_5).
+\]
+Inversion fixes exactly the rational summand, whose primitive central projector has trace one.  On the complementary factor $\Q(\zeta_5)$, inversion has fixed field $\Q(\sqrt5)$ and defines a quadratic extension $\Q(\zeta_5)/\Q(\sqrt5)$.  After base change to $\Q(\sqrt5)$, the invariant algebra is the trivalent algebra $N^3=N$, with the fixed projector $e_0$ and the two Galois-exchanged projectors $e_\pm$.
+\item The selected ten-state marking cell $\Delta_{10}=R_{10}$ has $q_1$-cycle type $5^2$.  Canonical rooting of the two five-cycles selects the fixed-point-free phase pairing $\kappa_{\mathrm{pair}}$ commuting with $q_1$ and gives
+\[
+ \Delta_{10}\cong\mathbb Z_5\times\mathbb Z_2,
+ \qquad q_1(n,p)=(n+1,p),\quad
+ \kappa_{\mathrm{pair}}(n,p)=(n,p+1).
+\]
+The five pairing fibers have cardinality two; $(I\pm\kappa_{\mathrm{pair}})/2$ have rank five.  The multiplier-$2$ lift $X(n,p)=(2n,p)$ has order four, commutes with $\kappa_{\mathrm{pair}}$, and satisfies $Xq_1X^{-1}=q_1^2$; the resulting action has order $40$ and its quotient by $\langle\kappa_{\mathrm{pair}}\rangle$ has order $20$ and type $F_{20}$.  The subgroup $\langle q_1,\kappa_{\mathrm{pair}}\rangle$ has order $10$ and is transitive, and the algebraic model $\beta_{10}(t)=1-(1-t^2)^5$ quotients through $v=t^2$ to $\beta_5(v)$.  The native return $\kappa_{\mathrm{ret}}(x)=d(c(x))$, where $d=q_1q_2q_1q_3q_2$ and $c$ is inverse reversal, preserves $\Delta_{10}$ and satisfies
+\[
+ \kappa_{\mathrm{ret}}(n,p)=(1-n,p+1),
+ \qquad
+ \kappa_{\mathrm{ret}}q_1\kappa_{\mathrm{ret}}=q_1^{-1}.
+\]
+Hence, $\langle q_1,\kappa_{\mathrm{ret}}\rangle\cong D_{10}$.
+\item The mixed inertia $q_4^2$ has exactly $264$ width-$11$ cycles.  Their induced $q_1,q_2$ action has four transitive components of degree $66$.  On every component, the branch-cycle triple has cycle types
+\[
+ 3^{22},\qquad 2^{33},\qquad 3\,4^3 5^3 6^6,
+\]
+and genus zero.  The involution $\kappa_{11}=(q_1q_2q_3)c$ satisfies $\kappa_{11}q_4^2\kappa_{11}=(q_4^2)^{-1}$, fixes no width-$11$ cusp, and pairs the four components as $0\leftrightarrow2$ and $1\leftrightarrow3$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Parts \textnormal{(i)}--\textnormal{(iv)} follow from the finite computations in \cref{sec:four,sec:reduced,sec:five}.  Part \textnormal{(v)} is the coefficient expansion of \cref{sec:coefficients}, part \textnormal{(vi)} is the exact class-factorization certificate of \cref{thm:three-five-refinement}, part \textnormal{(vii)} is \cref{thm:six-bridge}, part \textnormal{(viii)} is \cref{thm:collision-tails}, and part \textnormal{(ix)} is \cref{prop:mixed-boundary-monodromy,thm:canonical-ten-pullback,lem:ten-state-arithmetic-stability,thm:comparison-morphism-final}.  Part \textnormal{(x)} is \cref{thm:ten-involution}; part \textnormal{(xi)} is \cref{thm:arithmetic-stabilization}; part \textnormal{(xii)} is \cref{prop:factorization-orbits,prop:five-pair-tail-ledger}.  Part \textnormal{(xiii)} is \cref{prop:beta5-fixed-dual,prop:beta5-ledger}; part \textnormal{(xiv)} is \cref{thm:dual-two-five-ledger,thm:ten-state-native-return}; part \textnormal{(xv)} is \cref{thm:width-eleven-boundary}.  The arithmetic divisor statement in \textnormal{(ii)} follows from \cref{thm:index-one}.
+\end{proof}
+
+\subsection{Comparison with the three-point realization}
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.31\textwidth}>{\raggedright\arraybackslash}p{0.31\textwidth}}
+\toprule
+ & Huang--Jackson--Lee--Poonen--Pries--Zhang & Degree-$980$ construction \\
+\midrule
+Branch data & $(2,23A,23B)$ & $(2A,2A,3A,5A)$, $(2A)^4,3A$, $(2A,3A^4)$, and $2A^{10}$ refinements \\
+Branch count & $3$ & $4$, $5$, $6$, and $10$ \\
+Primary finite object & $7$ Nielsen points & $980$- and $21{,}456$-state braid components \\
+Primary geometry & degree-$23$ quotient of genus $4$ & ordered genus-$119$ curve and reduced genus-$43$ quotient \\
+Arithmetic output & explicit regular extension and polynomial & fixed/dual cyclic-fiber arithmetic; exact Hurwitz and collision geometry \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The two constructions use different Nielsen data and different finite moduli objects.  Huang--Jackson--Lee--Poonen--Pries--Zhang supply an explicit regular realization and polynomial; the degree-$980$ construction supplies complementary positive-dimensional Hurwitz geometry and a controlled four-to-five boundary correspondence.
+
+\section{The four-branch component}\label{sec:four}
+
+Permutations act on the right, so $i^{xy}=(i^x)^y$.  Fix the product-one generating tuple
+\begin{align*}
+ g_1={}&(1\,7)(2\,20)(4\,11)(5\,10)(6\,18)(9\,21)(16\,23)(17\,22),\\
+ g_2={}&(1\,20)(2\,7)(5\,10)(6\,9)(8\,14)(13\,19)(17\,22)(18\,21),\\
+ g_3={}&(1\,21\,2)(3\,23\,14)(4\,16\,18)(5\,8\,9)(6\,12\,22)(13\,15\,20),\\
+ g_4={}&(2\,6\,22\,12\,21)(3\,8\,5\,18\,23)(4\,9\,14\,16\,11)(7\,20\,15\,19\,13).
+\end{align*}
+The tuple has class type $(2A,2A,3A,5A)$, generates $M_{23}$, and has product one.
+
+\begin{theorem}[Complete ordered Nielsen component]\label{thm:orbit}
+The ordered inner and absolute Nielsen classes coincide, contain exactly $980$ generating classes, and form one pure-braid orbit.  The ordered cross-ratio cover is connected of degree $980$.
+\end{theorem}
+
+\begin{proof}[Computational proof]
+The primary verifier canonicalizes simultaneous sheet relabeling, closes the printed generating seed under the three pure point-push operators and their inverses, verifies the Artin relations, and obtains one orbit of size $980$.  Hurwitz moves carry the printed generating tuple to every state in that orbit, so every state generates $M_{23}$.  Independently, the exhaustiveness verifier fixes a $5A$ entry and tests all $3{,}795^2=14{,}402{,}025$ ordered pairs from $2A\times2A$.  It finds $14{,}700$ transitive solutions; the centralizer of the fixed $5A$ element has order $15$ and acts freely, giving exactly $980$ transitive inner classes.  Hence, the already constructed $980$ generating classes exhaust the transitive Nielsen class.  Since $N_{S_{23}}(M_{23})=M_{23}$ \cite{Atlas}, inner and absolute equivalence agree in the natural action.  Section~\ref{sec:repro} lists the scripts and corresponding run logs.
+\end{proof}
+
+\begin{corollary}[$\Q$-model of the ordered component]\label{cor:q-model}
+The ordered Hurwitz component of \cref{thm:orbit}, its cross-ratio map, and its compactification $C$ are defined over $\Q$.
+\end{corollary}
+
+\begin{proof}
+The classes $2A$, $3A$, and $5A$ are rational conjugacy classes of $M_{23}$ \cite{Atlas}.  The branch-cycle action of $G_{\Q}$ therefore preserves the ordered Nielsen class.  Since \cref{thm:orbit} proves that the complete generating Nielsen class is one braid orbit, Galois preserves that connected Hurwitz component.  Standard Hurwitz-space descent then gives the component, its ordered cross-ratio morphism, and the compactification over $\Q$ \cite{FriedVolklein}.
+\end{proof}
+
+\begin{proposition}[Ordered passport and genus]\label{prop:genus119}
+The three ordered peripheral permutations have cycle types
+\[
+ 1^{24}2^{136}3^{178}5^{30},
+\]
+\[
+ 1^{2}2^{21}3^{16}4^{41}5^{46}7^{38}8^{12}11^{12},
+\]
+and the same second type again.  Their indices are $612,792,792$, so the compactified ordered curve $C$ has genus $119$.
+\end{proposition}
+
+\begin{proof}
+The cycle counts are $368,188,188$.  Riemann--Hurwitz gives
+\[
+ 2g(C)-2=-2\cdot980+612+792+792=236.
+\]
+\end{proof}
+
+\subsection{Boundary divisors and period-index information}
+
+For $a\in\{0,1,\infty\}$ and $e\geq1$, let $D_{a,e}$ be the sum of geometric points in the compactified fiber over $a$ having ramification index $e$.  By \cref{cor:q-model}, each $D_{a,e}$ is $\Q$-rational because the cross-ratio map and the ramification index are Galois invariant.
+
+\begin{proposition}[Boundary divisor degrees]\label{prop:boundary-table}
+The nonzero degrees are
+\[
+\begin{array}{c|rrrrrrrr}
+\toprule
+ a & e=1&e=2&e=3&e=4&e=5&e=7&e=8&e=11\\
+\midrule
+ 0       &24&136&178&0 &30&0 &0 &0\\
+ 1       & 2& 21& 16&41&46&38&12&12\\
+ \infty  & 2& 21& 16&41&46&38&12&12\\
+\bottomrule
+\end{array}
+\]
+\end{proposition}
+
+\begin{theorem}[Index and period one]\label{thm:index-one}
+Since $D_{1,1}$ and $D_{1,2}$ are $\Q$-rational, the divisor
+\[
+ \Delta=11D_{1,1}-D_{1,2}
+\]
+is $\Q$-rational and has degree one.  Consequently,
+\[
+ \operatorname{ind}_{\Q}(C)=\operatorname{per}_{\Q}(C)=1,
+ \qquad \Pic^1(C)(\Q)\neq\varnothing.
+\]
+\end{theorem}
+
+\begin{proof}
+The degrees in \cref{prop:boundary-table} give $\deg\Delta=11\cdot2-21=1$.  The degrees of rational zero-cycles generate the index subgroup, while the degree of rational divisor classes generates the period subgroup.  Both subgroups therefore contain $1$.
+\end{proof}
+
+\begin{theorem}[Rational boundary points]\label{thm:rational-boundary}
+The compactified ordered curve has eight individually $\Q$-rational boundary points.  In the one-based canonical enumeration, they are
+\[
+ 281,372,823,837\quad(\lambda=1),\qquad
+ 20,770,818,973\quad(\lambda=\infty).
+\]
+The width-one divisors $D_{1,1}$ and $D_{\infty,1}$ are spectra of imaginary quadratic fields.  Consequently, $C(\Q)\neq\varnothing$.
+\end{theorem}
+
+\begin{proof}[Computational proof]
+The exact real-boundary verifier constructs the unique complex-conjugation permutation on the ordered Nielsen fiber, with cycle type $1^{26}2^{477}$, and computes boundary fixed-point counts $26,28,28$.  The stable boundary signature records ramification index, node monodromy, component monodromy groups, and degree-$23$ orbit partitions.  Exactly eight real boundary points have signatures occurring once in their rational boundary fiber, so Galois invariance of the signature fixes each of those eight points individually.  The degree-two width-one divisors over $\lambda=1$ and $\lambda=\infty$ have empty real support, so each is an imaginary quadratic field.
+\end{proof}
+
+\begin{remark}[Boundary and interior arithmetic]
+Index one records the rational divisor-class statement.  The eight singleton boundary signatures separately certify $C(\Q)\neq\varnothing$.  Interior specialization is governed by the fiber-algebra criterion in \cref{thm:b27-target}.
+\end{remark}
+
+\section{Universal coefficient reconstruction targets}\label{sec:coefficients}
+
+\subsection{Four branches}
+Normalize the branch values by $3A\mapsto0$, $2A\mapsto1$, $5A\mapsto\infty$, and the second $2A\mapsto\lambda$.  Put
+\begin{align*}
+ A_3&=x^6+a_4x^4+a_3x^3+a_2x^2+a_1x+a_0,
+ &A_1&=x^5+\alpha_4x^4+\cdots+\alpha_0,\\
+ Q_5&=x^4+q_2x^2+q_1x+q_0,
+ &Q_1&=r_3x^3+r_2x^2+r_1x+r_0,\\
+ B_2&=x^8+b_6x^6+\cdots+b_0,
+ &B_1&=s_7x^7+\cdots+s_0,\\
+ C_2&=x^8+c_7x^7+\cdots+c_0,
+ &C_1&=t_7x^7+\cdots+t_0.
+\end{align*}
+Set $p=A_3^3A_1$ and $q=Q_5^5Q_1$.  The identities
+\[
+ p-q=B_2^2B_1,
+ \qquad
+ p-\lambda q=C_2^2C_1
+\]
+give $48$ coefficient equations in $48$ normalized coefficient variables.
+
+\begin{proposition}[Meaning of the four-branch equations]\label{prop:coeff4}
+On the locus where all factors are square-free, pairwise disjoint, and of the displayed degrees, every solution defines a degree-$23$ rational map with local cycle partitions $3^6 1^5$, $2^8 1^7$, $5^4 1^3$, and $2^8 1^7$ at $(0,1,\infty,\lambda)$.  Conversely, every normalized $M_{23}$-cover in the selected Hurwitz component gives a solution.  The component of the coefficient locus containing the certified Nielsen tuple has geometric monodromy $M_{23}$; the raw factorization equations encode the full ramification locus, and the Nielsen data select the $M_{23}$ component.
+\end{proposition}
+
+\begin{proof}
+The exponents $3,2,5,2$ encode the ramification multiplicities in the four fibers; the residual factors encode the unramified points.  Branch separation and nonvanishing resultants make the rational map nondegenerate.  Reading the fiber factorizations in reverse gives the converse.
+\end{proof}
+
+\begin{remark}
+The certificate bundle expands all $48$ equations exactly.  The equations encode the normalized ramification reconstruction problem, and the Nielsen computation supplies the complete component selection used in the geometric results below.
+\end{remark}
+
+\subsection{Interior fiber algebra and the \texorpdfstring{degree-$27$}{degree-27} target}
+Let $a\in\Pone_\lambda\setminus\{0,1,\infty\}$ be rational and let $A_a$ be the finite \'etale $\Q$-algebra of the degree-$980$ ordered fiber above $a$.
+
+\begin{theorem}[Interior fiber criterion and target normal form]\label{thm:b27-target}
+For a rational interior parameter $a$, the degree-$980$ fiber contains a $\Q$-rational point exactly when its finite \'etale algebra $A_a$ has a direct $\Q$-factor, equivalently a primitive central idempotent of multiplication rank and trace one.  The executed target algebra
+\[
+ B_{27}=\Q[Z]/(Z^{27}-Z)\simeq\Q^3\times\Q(\zeta_{13})^2
+\]
+has rank $27$, characteristic polynomial $T^{27}-T$, and three rational rank-one trace-one projectors; the zero-factor projector is $e_0=1-Z^{26}$.  A certified map $B_{27}\to A_a$ carrying $e_0$ to such a projector, or a certified surjection $A_a\twoheadrightarrow B_{27}$ followed by $Z\mapsto0$, supplies an interior rational point.  The release records $B_{27}$ and its exact projectors as the target normal form; source activation consists of the genuine algebra $A_a$ and the certified algebra map.
+\end{theorem}
+
+\begin{proof}
+Finite \'etale $\Q$-algebras split as products of number fields.  The rational factor and trace-one projector criteria are therefore equivalent.  The Chinese remainder factorization of $Z^{27}-Z$ gives the displayed decomposition, and $1-Z^{26}$ is the projector to the root $Z=0$.
+\end{proof}
+
+\subsection{Five branches}
+Normalize the five branch values to $(0,\infty,1,\lambda,\mu)$.  Write
+\[
+ P=A_0^2L_0,
+ \qquad Q=A_\infty^2L_\infty,
+\]
+\[
+ P-Q=A_1^2L_1,
+ \qquad P-\lambda Q=A_\lambda^2L_\lambda,
+ \qquad P-\mu Q=C^3M,
+\]
+with $\deg A_\bullet=8$, $\deg L_\bullet=7$, $\deg C=6$, and $\deg M=5$.  The three degree-$23$ identities give $72$ coefficient equations.  Before gauge reduction there are $83$ variables; the five factor rescalings, common target rescaling, and three source-coordinate dimensions account for nine gauge dimensions, leaving expected base dimension two.
+
+\begin{proposition}[Meaning of the five-branch equations]\label{prop:coeff5}
+On the nondegenerate locus, every solution defines a degree-$23$ cover of source genus zero with four local cycle partitions $2^8 1^7$ and one partition $3^6 1^5$.  Conversely, every normalized $M_{23}$-cover in the selected five-branch component supplies a solution.  As in the four-branch case, the raw equations encode ramification and the Nielsen data select the $M_{23}$ component.
+\end{proposition}
+
+\begin{proof}
+The four square factors and one cube factor encode indices $8,8,8,8,12$, whose sum is $44=2(23-1)$.  The residual factors encode the unramified portions.  The same factorization argument as in \cref{prop:coeff4} proves both directions.
+\end{proof}
+
+\section{The reduced \texorpdfstring{$j$}{j}-line}\label{sec:reduced}
+
+The $980$-sheet ordered cross-ratio cover records one class ordering.  Passing through all twelve orderings and quotienting by the certified free Klein-four action produces the reduced $j$-line cover.
+
+\begin{theorem}[Reduced $j$-line certificate]\label{thm:reduced}
+The full all-orderings orbit has $11{,}760$ states.  The Klein-four quotient has degree $2940$ and one connected component.  Its branch-cycle triple has cycle types
+\[
+ \gamma_0\sim3^{980},
+ \qquad
+ \gamma_1\sim2^{1470},
+\]
+\[
+ \gamma_\infty\sim
+ 2^{14}3^{38}4^{89}5^{30}6^{86}8^{41}10^{46}14^{38}16^{12}22^{12}.
+\]
+The compactification has genus $43$ and $406$ cusps.
+\end{theorem}
+
+\begin{proof}[Computational proof]
+The all-orderings verifier checks the braid relations, twelve orderings, free Klein-four action, transitivity, and the three quotient permutations.  Their indices are $1960,1470,2534$.  Thus,
+\[
+ 2g-2=-2\cdot2940+1960+1470+2534=84.
+\]
+The number of cycles of $\gamma_\infty$ is $406$.
+\end{proof}
+
+\begin{corollary}[Elliptic fiber over $j=1728$]\label{cor:1728}
+Every point over $j=1728$ has ramification index two; equivalently, the reduced elliptic fiber is fixed-point-free of type $2^{1470}$.
+\end{corollary}
+
+
+\section{The five-branch component and the width-five boundary}\label{sec:five}
+
+An explicit product-one generating seed of type $(2A,2A,2A,2A,3A)$ lies in the standard $M_{23}$ copy.  The colored braid action of $q_1,q_2,q_3,q_4^2$ closes its component exactly.
+
+\begin{theorem}[Five-branch colored component]\label{thm:fivecomponent}
+The colored braid component has $21{,}456$ states.  Each of $q_1,q_2,q_3$ has cycle type
+\[
+ 1^{24}2^{292}3^{796}4^{1248}5^{980}6^{1428},
+\]
+while $q_4^2$ has cycle type
+\[
+ 1^{18}2^{468}3^{582}4^{984}5^{900}7^{840}8^{192}11^{264}.
+\]
+\end{theorem}
+
+\begin{proof}[Computational proof]
+The verifier reconstructs the component from the explicit seed, checks product one, source genus zero, generation of $M_{23}$, operator bijectivity, and every displayed cycle histogram.
+\end{proof}
+
+\begin{theorem}[Full equal-$2A$ width-five boundary]\label{thm:clutch}
+Let $D_{ij}\subset\overline{\widetilde{\mathcal H}}_5$, $1\le i<j\le4$, be the six collision divisors for the four equal $2A$ branch points.  Every width-five stratum $D_{ij}^{(5)}$ has $980$ cycles, clutching maps these cycles bijectively onto $\operatorname{Ni}^{\mathrm{in}}(M_{23};2A,2A,3A,5A)$, and the normalized stratum is the complete ordered genus-$119$, degree-$980$ four-branch curve $C^{\mathrm{ord}}/\Q$.  Hence, $\mathcal B_{\mathrm{full}}=\bigcup_{i<j}D_{ij}^{(5)}$ is the full equal-$2A$ width-five boundary subcover.
+\end{theorem}
+
+\begin{proof}[Computational and geometric proof]
+For $D_{12},D_{23},D_{34}$ the local operators are $q_1,q_2,q_3$.  The verifier gives $980$ width-five cycles and $980$ distinct clutched transitive inner classes for each operator.  By \cref{thm:orbit}, the complete four-branch Nielsen class has $980$ elements, so these three clutching maps are bijections.
+
+The four labels carry the same rational class $2A$, and the colored braid action induces the full $S_4$ permutation action on them while preserving the connected component of \cref{thm:fivecomponent}.  Every pair $\{i,j\}$ is therefore the image of $\{1,2\}$ under a colored braid.  Local monodromy is transported by conjugation and clutching is braid-equivariant, giving the same $980$-cycle bijection for all six pairs.  Admissible-cover clutching gives a finite degree-one morphism over $\Q$ from each normalized width-five stratum to $C^{\mathrm{ord}}$ \cite{Wewers}; normality then gives the stated isomorphism.
+\end{proof}
+
+\section{The degree-five cyclic quotient and fixed/dual fiber}\label{sec:beta5}
+
+The cyclic degree-five carrier associated with the five-pair fusion has abstract branch cycles
+\[
+ \sigma_0=1,
+ \qquad
+ \sigma_1=(1\,2\,3\,4\,5),
+ \qquad
+ \sigma_\infty=\sigma_1^{-1}.
+\]
+
+\begin{proposition}[Abstract five-pair cover]\label{prop:beta5}
+The branch cycles above are transitive, have product one, and have total index eight.  Their normalized cover is
+\[
+ \overline L\cong\Pone_{\Q},
+ \qquad
+ \boxed{\beta_5(t)=1-(1-t)^5}.
+\]
+The fiber $\beta_5^{-1}(0)$ is a $\Q$-rational effective zero-cycle of degree five.
+\end{proposition}
+
+\begin{proof}
+Riemann--Hurwitz gives $2g-2=-10+8=-2$.  The displayed polynomial has one totally ramified point over $1$, one over $\infty$, and five unramified points over $0$.
+\end{proof}
+
+\begin{proposition}[Finite cyclic carrier of the pair fusion]\label{prop:beta5-finite-carrier}
+Let $P=(P_1,\ldots,P_5)$ be the fused five-branch tuple of \cref{thm:ten-involution} and set
+\[
+ \delta=q_1q_2q_3q_4.
+\]
+Modulo simultaneous conjugation, the five classes
+\[
+ [P],\ [\delta P],\ [\delta^2P],\ [\delta^3P],\ [\delta^4P]
+\]
+are distinct and $[\delta^5P]=[P]$.  Hence, $\delta$ acts as a $5$-cycle on this finite carrier.  The associated abstract degree-five branch-cycle triple has passport $1^5,5,5$ and therefore the normalized model $\beta_5$ of \cref{prop:beta5}.  This identifies the $\beta_5$ passport with the pair-fusion carrier at the Nielsen level.  The corresponding global admissible-cover geometry is the pair-marked clutching construction of \cref{thm:global-pair-stabilization}.
+\end{proposition}
+
+\begin{proof}[Exact computational proof]
+The certificate reconstructs $P$ from the branch-cycle-equivariant ten-involution refinement, applies $q_1q_2q_3q_4$ successively, canonicalizes only by simultaneous conjugation, and obtains five distinct inner keys before the initial key returns on the fifth iterate.  The resulting permutation is a $5$-cycle, so the branch-cycle triple $1,\delta,\delta^{-1}$ has passport $1^5,5,5$.
+\end{proof}
+
+\begin{proposition}[Mixed-boundary monodromy]\label{prop:mixed-boundary-monodromy}
+Let $D_{45}$ denote the mixed collision boundary whose normal inertia on the $21{,}456$-state colored component is $q_4^2$.  Its fixed fiber
+\[
+ F_{45}=\operatorname{Fix}(q_4^2)
+\]
+has $18$ states and is one orbit under the boundary monodromy generated by $q_1,q_2$.  On $F_{45}$, the cycle profiles are
+\[
+ \ct(q_1)=2^1 3^2 5^2,
+ \qquad
+ \ct(q_2)=2^1 3^2 5^2,
+ \qquad
+ \ct((q_1q_2)^{-1})=3^6.
+\]
+Hence, the normalized boundary cover has degree $18$ and genus $2$.  The centralizer of this transitive boundary monodromy has order $2$ and its nontrivial element is fixed-point-free.
+
+Let $R_{10}\subset F_{45}$ be the ten-state subset consisting of the $q_4^2$-fixed sheets lying on the width-five cycles of $q_1$.  Then
+\[
+ |R_{10}|=10,
+ \qquad
+ q_2(R_{10})\ne R_{10}.
+\]
+The boundary monodromy therefore moves $R_{10}$ through a finite orbit of ten-element subsets.  The canonical set-stabilizer base change associated with this orbit produces the connected degree-$10$ Hurwitz subcover of \cref{thm:canonical-ten-pullback}.  The exact cover $\beta_5$ of \cref{prop:beta5} records the cyclic five-pair quotient on the distinguished fiber.
+\end{proposition}
+
+\begin{proof}[Exact computational proof]
+The boundary verifier reconstructs the complete five-branch orbit, restricts $q_1,q_2$ to $F_{45}$, and proves transitivity on all $18$ fixed sheets.  Their cycle counts are $5,5,6$, so the three indices are $13,13,12$ and
+\[
+ g=1-18+\frac{13+13+12}{2}=2.
+\]
+Direct centralizer enumeration gives order $2$ and a unique free involution.  The same verifier constructs $R_{10}$ and its $q_2$-image and checks that the two ten-element sets differ.  The subset-orbit and stabilizer computation in \cref{thm:canonical-ten-pullback} then supplies the canonical finite base change on which $R_{10}$ becomes a connected Hurwitz subcover.
+\end{proof}
+
+\begin{theorem}[Dual two-five marking ledger]\label{thm:dual-two-five-ledger}
+Let
+\[
+ \Delta_{10}:=R_{10}.
+\]
+The restriction of $q_1$ to $\Delta_{10}$ has cycle type $5^2$, while $q_4^2$ acts trivially.  Root each $q_1$-cycle at its lexicographically least canonical Nielsen representative and write the two rooted cycles as
+\[
+ \Delta_5^0=(P_{0,0},\ldots,P_{4,0}),
+ \qquad
+ \Delta_5^1=(P_{0,1},\ldots,P_{4,1}),
+\]
+with $q_1P_{n,p}=P_{n+1,p}$, indices modulo $5$.  Among the five phase-compatible free involutions exchanging the two cycles and commuting with $q_1$, this rooting selects the unique involution
+\[
+ \boxed{\kappa_{\mathrm{pair}}(P_{n,p})=P_{n,p+1}.}
+\]
+Consequently,
+\[
+ \boxed{
+ \Delta_{10}\simeq\mathbb Z_5\times\mathbb Z_2,
+ \qquad
+ q_1(n,p)=(n+1,p),
+ \qquad
+ \kappa_{\mathrm{pair}}(n,p)=(n,p+1),
+ }
+\]
+and the dual-forgotten projection $(n,p)\mapsto n$ has fiber profile
+\[
+ \boxed{2,2,2,2,2.}
+\]
+On $\Q^{\Delta_{10}}$, the operators
+\[
+ P_+=\frac{I+\kappa_{\mathrm{pair}}}{2},
+ \qquad
+ P_-=\frac{I-\kappa_{\mathrm{pair}}}{2}
+\]
+are orthogonal idempotents of ranks $5$ and $5$.  The ledger multiplier
+\[
+ X(n,p)=(2n,p)
+\]
+has order four, commutes with $\kappa_{\mathrm{pair}}$, and satisfies
+\[
+ Xq_1X^{-1}=q_1^2.
+\]
+Thus, $\langle q_1,\kappa_{\mathrm{pair}},X\rangle$ has order $40$, and its quotient by the central dual involution has order $20$ and is isomorphic to $F_{20}=C_5\rtimes C_4$.
+
+The same two-five ledger has the genus-zero algebraic model
+\[
+ \boxed{
+ \beta_{10}(t)=1-(1-t^2)^5,
+ \qquad
+ \kappa_{\mathrm{pair}}(t)=-t,
+ \qquad
+ v=t^2,
+ \qquad
+ \beta_{10}(t)=\beta_5(v).
+ }
+\]
+For the generic fiber polynomial $\beta_{10}(t)-y$,
+\[
+ \operatorname{Disc}_t(\beta_{10}(t)-y)=10^{10}y(y-1)^8,
+\]
+so the rank-ten algebra is finite \'etale over $\Q[y,1/(y(y-1))]$, and the $\kappa_{\mathrm{pair}}$-invariant algebra has rank five.
+\end{theorem}
+
+\begin{proof}[Exact computational proof]
+The exact colored-orbit reconstruction produces the $21{,}456$ states and the selected cell
+\[
+ \{5619,5707,10252,11406,13499,15797,17032,18695,20064,21190\}
+\]
+in zero-based enumeration.  Restriction of $q_1$ gives two five-cycles.  Canonical rooting gives
+\[
+\begin{aligned}
+ \Delta_5^0&=(21190,11406,17032,15797,20064),\\
+ \Delta_5^1&=(5707,10252,13499,18695,5619),
+\end{aligned}
+\]
+and hence the five canonical dual pairs
+\[
+ (21190,5707),\ (11406,10252),\ (17032,13499),\
+ (15797,18695),\ (20064,5619).
+\]
+Direct permutation arithmetic verifies $\kappa_{\mathrm{pair}}^2=1$, fixed-point-freeness, $q_1\kappa_{\mathrm{pair}}=\kappa_{\mathrm{pair}} q_1$, the $2^5$ projected-key fibers, the two rank-five projectors, the multiplier identity $Xq_1X^{-1}=q_1^2$, and the stated group orders.  Symbolic elimination gives the displayed discriminant and the quotient identity $\beta_{10}(t)=\beta_5(t^2)$.
+\end{proof}
+
+\begin{theorem}[Native return on the ten-state cell]\label{thm:ten-state-native-return}
+Let $c$ be inverse reversal on the five-branch component and, in the recorded right-action convention, set
+\[
+ d=q_1q_2q_1q_3q_2,
+ \qquad
+ \boxed{\kappa_{\mathrm{ret}}(x)=d(c(x)).}
+\]
+Then $\kappa_{\mathrm{ret}}$ preserves $\Delta_{10}$, is a fixed-point-free involution, and in the rooted coordinates of \cref{thm:dual-two-five-ledger} acts by
+\[
+ \boxed{\kappa_{\mathrm{ret}}(n,p)=(1-n,p+1).}
+\]
+Moreover,
+\[
+ \boxed{\kappa_{\mathrm{ret}}q_1\kappa_{\mathrm{ret}}=q_1^{-1}},
+\]
+so
+\[
+ \boxed{\langle q_1,\kappa_{\mathrm{ret}}\rangle\cong D_{10}.}
+\]
+The phase pairing and native return commute,
+\[
+ \kappa_{\mathrm{pair}}\kappa_{\mathrm{ret}}
+ =\kappa_{\mathrm{ret}}\kappa_{\mathrm{pair}},
+\]
+and $\langle q_1,\kappa_{\mathrm{pair}},\kappa_{\mathrm{ret}}\rangle$ has order $20$.
+\end{theorem}
+
+\begin{proof}[Exact computational proof]
+The completion certificate reconstructs the same $21{,}456$-state component and the ten-state cell $\Delta_{10}$.  Applying inverse reversal and then the braid word $d$ gives the five pairs
+\[
+ (5619,17032),\ (5707,11406),\ (10252,21190),\
+ (13499,20064),\ (15797,18695).
+\]
+These pairs preserve $\Delta_{10}$ and contain no fixed state.  Relative to the canonical rooted cycles
+\[
+\begin{aligned}
+ \Delta_5^0&=(21190,11406,17032,15797,20064),\\
+ \Delta_5^1&=(5707,10252,13499,18695,5619),
+\end{aligned}
+\]
+the five pairs are exactly $(n,p)\leftrightarrow(1-n,p+1)$.  Direct permutation arithmetic gives the conjugation identity with $q_1$, commutation with $\kappa_{\mathrm{pair}}$, and the group orders $10$ and $20$.
+\end{proof}
+
+\begin{theorem}[Width-eleven mixed-boundary components]\label{thm:width-eleven-boundary}
+Let $\mathcal C_{11}$ be the set of length-$11$ cycles of the mixed inertia $q_4^2$ on the $21{,}456$-state five-branch component.  Then
+\[
+ \boxed{|\mathcal C_{11}|=264.}
+\]
+The induced action of $q_1$ and $q_2$ splits $\mathcal C_{11}$ into four transitive components
+\[
+ \mathcal B_0,\mathcal B_1,\mathcal B_2,\mathcal B_3,
+ \qquad
+ |\mathcal B_i|=66.
+\]
+On each component, define
+\[
+ \gamma_0=q_1q_2,
+ \qquad
+ \gamma_1=q_1q_2q_1,
+ \qquad
+ \gamma_\infty=(\gamma_1\gamma_0)^{-1}
+\]
+in the recorded right-action convention.  Their cycle types are
+\[
+ \boxed{
+ \ct(\gamma_0)=3^{22},\qquad
+ \ct(\gamma_1)=2^{33},\qquad
+ \ct(\gamma_\infty)=3\,4^3 5^3 6^6.
+ }
+\]
+Every normalized degree-$66$ component has genus zero.
+
+Let $c$ be inverse reversal and define
+\[
+ \boxed{\kappa_{11}(x)=(q_1q_2q_3)(c(x)).}
+\]
+Then $\kappa_{11}$ is an involution satisfying
+\[
+ \boxed{\kappa_{11}q_4^2\kappa_{11}=(q_4^2)^{-1}.}
+\]
+It fixes no width-$11$ cusp and pairs the four components as
+\[
+ \boxed{0\leftrightarrow2,\qquad1\leftrightarrow3.}
+\]
+\end{theorem}
+
+\begin{proof}[Exact computational proof]
+The completion certificate finds exactly $264$ length-$11$ cycles of $q_4^2$.  The induced $q_1,q_2$ action has orbit sizes $66,66,66,66$.  On every orbit the computed cycle histograms are $3^{22}$, $2^{33}$, and $3\,4^3 5^3 6^6$, with indices $44$, $33$, and $53$.  Riemann--Hurwitz gives
+\[
+ 2g-2=-132+44+33+53=-2,
+ \qquad
+ g=0.
+\]
+The same certificate constructs $\kappa_{11}$, verifies $\kappa_{11}^2=1$ and the inverse-inertia identity, counts zero fixed width-$11$ cusps, and obtains the stated component pairing.
+\end{proof}
+
+\begin{theorem}[Canonical ten-sheet pullback over the mixed boundary]
+\label{thm:canonical-ten-pullback}
+Let $B^\circ\simeq M_{0,4,\Q}$ be the smooth base of the mixed boundary divisor $D_{45}$ and let
+\[
+ \rho:\pi_1(B^\circ_{\overline{\Q}})\longrightarrow S(F_{45})
+\]
+be the geometric monodromy representation of the degree-$18$ boundary cover.  Write
+\[
+ G=\langle a,b\rangle,
+ \qquad a=q_1|_{F_{45}},\quad b=q_2|_{F_{45}},
+\]
+and let $\Delta_{10}=R_{10}$.  Then
+\[
+ |G|=92{,}897{,}280,
+ \qquad
+ Z(G)=\langle\kappa_{18}\rangle\cong C_2,
+\]
+where $\kappa_{18}$ is the unique nontrivial deck transformation of the degree-$18$ boundary cover and acts freely on $F_{45}$.
+
+The $G$-orbit of $\Delta_{10}$ in the set of ten-element subsets of $F_{45}$ has cardinality $126$.  Hence,
+\[
+ H:=\operatorname{Stab}_G(\Delta_{10})
+\]
+has order $737{,}280$.  The induced action of $H$ on $\Delta_{10}$ is transitive of order $3840$.  The involution $\kappa_{18}$ preserves $\Delta_{10}$ and its restriction is exactly the involution $\kappa_{\mathrm{pair}}$ of \cref{thm:dual-two-five-ledger}.  On the five $\kappa_{\mathrm{pair}}$-pairs, the induced $H$-action has order $120$ and equals $S_5$.
+
+Let
+\[
+ B_H^\circ\longrightarrow B^\circ
+\]
+be the connected finite \'etale cover corresponding to $\rho^{-1}(H)$.  The pullback of the degree-$18$ boundary Hurwitz cover to $B_H^\circ$ contains a connected degree-$10$ subcover
+\[
+ L_{10,H}^\circ\longrightarrow B_H^\circ
+\]
+with fiber $\Delta_{10}$.  The involution $\kappa_{\mathrm{pair}}$ is a deck involution of this subcover, and
+\[
+ Q_H^\circ:=L_{10,H}^\circ/\langle\kappa_{\mathrm{pair}}\rangle
+ \longrightarrow B_H^\circ
+\]
+is a connected degree-$5$ cover.
+
+After compactification, the three curves have
+\[
+ \boxed{
+ g(\overline B_H)=31,
+ \qquad
+ g(\overline L_{10,H})=327,
+ \qquad
+ g(\overline Q_H)=161.
+ }
+\]
+As covers of the original compactified mixed-boundary base $\mathbb P^1$, their degrees are $126$, $1260$, and $630$.  The involution $\kappa_{\mathrm{pair}}$ acts freely on $L_{10,H}^\circ$; the compactified quotient map $p_H:\overline L_{10,H}\to\overline Q_H$ has total boundary ramification $12$.
+\end{theorem}
+
+\begin{proof}[Exact finite-monodromy and covering-space proof]
+The mixed-boundary certificate gives the restricted permutations $a,b$ on $18$ sheets.  Schreier--Sims computation gives $|\langle a,b\rangle|=92{,}897{,}280$.  Its permutation centralizer has order two; the nonidentity element lies in the monodromy group, commutes with $a$ and $b$, and acts freely.  The pullback certificate enumerates the orbit of $\Delta_{10}$ under $G$ and obtains $126$ subsets.  Orbit--stabilizer gives $|H|=737{,}280$.  Schreier generators for $H$ induce a transitive group of order $3840$ on $\Delta_{10}$ and a transitive group of order $120$ on the five $\kappa_{\mathrm{pair}}$-pairs.  The restriction of the central deck involution gives the five pairs
+\[
+ (5619,20064),\ (5707,21190),\ (10252,11406),\
+ (13499,17032),\ (15797,18695),
+\]
+which agree exactly with the canonical pairing of \cref{thm:dual-two-five-ledger}.
+
+Finite \'etale covers of $B^\circ_{\overline{\Q}}$ correspond to finite-index subgroups of $\pi_1(B^\circ_{\overline{\Q}})$.  The cover associated with $\rho^{-1}(H)$ makes $\Delta_{10}$ monodromy-invariant, and transitivity of the induced $H$-action makes the resulting degree-$10$ component connected.  Centrality of $\kappa_{\mathrm{pair}}$ gives the degree-$5$ quotient.
+
+For the compactified degree-$126$ base-change cover, the three branch permutations have cycle types
+\[
+ 1^1 5^4 15^7,
+ \qquad
+ 1^1 5^4 15^7,
+ \qquad
+ 3^{42}.
+\]
+Their indices are $114,114,84$, giving $g(\overline B_H)=31$.  On the degree-$1260$ ten-sheet component, the corresponding types are
+\[
+ 5^{20}10^2 15^{68}30^4,
+ \qquad
+ 5^{20}10^2 15^{68}30^4,
+ \qquad
+ 3^{420},
+\]
+with indices $1166,1166,840$, giving genus $327$.  On the degree-$630$ quotient, they are
+\[
+ 5^{12}15^{38},
+ \qquad
+ 5^{12}15^{38},
+ \qquad
+ 3^{210},
+\]
+with indices $580,580,420$, giving genus $161$.  Finally, Riemann--Hurwitz for $p_H$ gives
+\[
+ (2\cdot327-2)-2(2\cdot161-2)=12,
+\]
+so all ramification of the involution quotient lies on the compactification boundary and has total degree $12$.
+\end{proof}
+
+\begin{lemma}[Arithmetic stability of the ten-state pullback]\label{lem:ten-state-arithmetic-stability}
+The orbit of $\Delta_{10}$, the stabilizer cover $B_H^\circ\to B^\circ$, the connected degree-$10$ component $L_{10,H}^\circ$, the involution $\kappa_{\mathrm{pair}}$, and the quotient $Q_H^\circ$ are defined over $\Q$.  Their normal compactifications and induced finite maps are defined over $\Q$ as well.
+\end{lemma}
+
+\begin{proof}
+For the rational tangential basepoint,
+\[
+ \Delta_{10}=\{x\in F_{45}:q_4^2x=x\text{ and }|\langle q_1\rangle x|=5\}.
+\]
+The certificate gives exactly ten elements.  By the branch-cycle action, $q_1$ and $q_4^2$ are carried to simultaneous conjugates of unit powers, which preserve the defining predicate up to the same fiber relabeling \cite{FriedVolklein}.  Thus, every Galois conjugate of $\Delta_{10}$ is a $G$-translate of $\Delta_{10}$, and the certified $126$-element orbit $G\cdot\Delta_{10}$ is $G_{\Q}$-stable.  The finite etale cover with this orbit as fiber, together with its tautological degree-$10$ subcover, therefore descends to $\Q$.  The unique nontrivial central deck involution is also $G_{\Q}$-stable; hence, its restriction, the degree-$5$ quotient, and the induced maps descend.  Normalization and the canonical proper compactifications preserve the descent \cite{Seguin}.
+\end{proof}
+
+\begin{theorem}[Comparison morphism]
+\label{thm:comparison-morphism-final}
+Let $\overline D_{45}$ be the normalized compactified mixed-boundary Hurwitz curve, let
+\[
+ \overline R_H:\overline L_{10,H}\longrightarrow\overline D_{45}
+\]
+be the finite morphism induced by the second projection of the canonical set-stabilizer pullback, and let
+\[
+ p_H:\overline L_{10,H}\longrightarrow
+ \overline Q_H:=\overline L_{10,H}/\langle\kappa_{\mathrm{pair}}\rangle
+\]
+be the quotient by the deck involution $\kappa_{\mathrm{pair}}$, which acts fixed-point-freely on $L_{10,H}^\circ$ and has total boundary ramification $12$ on the compactification.  The unique nontrivial central deck involution $\kappa_{18}$ of $\overline D_{45}$ satisfies
+\[
+ \boxed{
+ \overline R_H\circ\kappa_{\mathrm{pair}}
+ =
+ \kappa_{18}\circ\overline R_H.
+ }
+\]
+Consequently, there is a unique finite $\Q$-morphism
+\[
+ \boxed{
+ \mathfrak B_H:\overline Q_H
+ \longrightarrow
+ \overline D_{45}/\langle\kappa_{18}\rangle
+ }
+\]
+such that, for the quotient map
+\[
+ \pi_{45}:\overline D_{45}
+ \longrightarrow
+ \overline D_{45}/\langle\kappa_{18}\rangle,
+\]
+one has
+\[
+ \boxed{
+ \mathfrak B_H\circ p_H
+ =
+ \pi_{45}\circ\overline R_H.
+ }
+\]
+Equivalently, on geometric points,
+\[
+ \boxed{
+ \mathfrak B_H([x]_{\kappa_{\mathrm{pair}}})
+ =
+ [\overline R_H(x)]_{\kappa_{18}}.
+ }
+\]
+The diagram
+\[
+\begin{CD}
+ \overline L_{10,H} @>{\overline R_H}>> \overline D_{45}\\
+ @V{p_H}VV @VV{\pi_{45}}V\\
+ \overline Q_H @>{\mathfrak B_H}>> \overline D_{45}/\langle\kappa_{18}\rangle
+\end{CD}
+\]
+commutes.  On the smooth locus, $\mathfrak B_H$ records the paired ten-state Hurwitz family after the canonical degree-$126$ base change.
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:ten-state-arithmetic-stability}, the source, target, involutions, quotient maps, and compactifications in the statement are defined over $\Q$.  The degree-$10$ component $L_{10,H}^{\circ}$ is a connected component of the pullback of the degree-$18$ mixed-boundary Hurwitz cover.  Projection to that cover gives $R_H^{\circ}$, and normalization followed by compactification gives $\overline R_H$.  The pullback certificate verifies that the central deck involution $\kappa_{18}$ preserves the selected ten-state fiber and restricts there exactly to the canonical pairing $\kappa_{\mathrm{pair}}$.  Centrality makes this identity compatible with monodromy on the connected pullback component, hence
+\[
+ \overline R_H\kappa_{\mathrm{pair}}=\kappa_{18}\overline R_H.
+\]
+Applying $\pi_{45}$ gives
+\[
+ \pi_{45}\overline R_H\kappa_{\mathrm{pair}}
+ =\pi_{45}\kappa_{18}\overline R_H
+ =\pi_{45}\overline R_H.
+\]
+Thus, $\pi_{45}\overline R_H$ is constant on the $\kappa_{\mathrm{pair}}$-orbits.  The universal property of the finite quotient $p_H$, applied over $\Q$, gives the unique $\Q$-morphism $\mathfrak B_H$ and the displayed identity.
+\end{proof}
+
+\begin{corollary}[Closure of the comparison step]
+\label{cor:comparison-step-closed}
+The canonical five-pair quotient is an algebraic curve equipped with the comparison morphism
+\[
+ \boxed{
+ \overline Q_H
+ \xrightarrow{\;\mathfrak B_H\;}
+ \overline D_{45}/\langle\kappa_{18}\rangle.
+ }
+\]
+Its compactified genus is $161$, and the induced action on the five $\kappa_{\mathrm{pair}}$-pairs is $S_5$.  On the distinguished ten-state fiber, the subgroup $\langle q_1,\kappa_{\mathrm{pair}}\rangle$ has order $10$; quotienting that cyclic subcarrier by $\kappa_{\mathrm{pair}}$ gives the degree-$5$ passport
+\[
+ 1^5,\qquad5,\qquad5,
+\]
+represented by
+\[
+ \boxed{\beta_5(t)=1-(1-t)^5.}
+\]
+Thus, the global comparison curve $\overline Q_H$ and the genus-zero cyclic carrier $\overline L\cong\mathbb P^1_{\Q}$ realize two levels of the same five-pair data: $\overline Q_H$ carries the full global $S_5$ monodromy after the canonical base change, while $\overline L$ records the cyclic order-$5$ subcarrier selected by $\langle q_1,\kappa_{\mathrm{pair}}\rangle$.
+\end{corollary}
+
+\begin{proposition}[Geometric deck pairing and representative duality]
+\label{prop:typed-duality}
+The involution $\kappa_{\mathrm{pair}}$ in \cref{thm:canonical-ten-pullback} pairs distinct five-branch Hurwitz sheets.  The $h$-equivariant duality of \cref{thm:ten-involution} sends the printed representatives $R,U,P$ to simultaneous $h$-conjugates and therefore fixes their inner Nielsen classes.  Thus, the two involutions act on different objects: $\kappa_{\mathrm{pair}}$ is a deck transformation of a Hurwitz cover after the canonical base change, while $h$-duality is a representative symmetry inside one inner Nielsen point.
+\end{proposition}
+
+\begin{proof}
+The five $\kappa_{\mathrm{pair}}$-pairs listed above consist of ten distinct canonical state indices.  The dual-conjugacy certificate verifies
+\[
+ R^\vee=hRh^{-1},\qquad U^\vee=hUh^{-1},\qquad P^\vee=hPh^{-1}
+\]
+and equality of the corresponding canonical inner keys.  These two exact computations establish the stated type separation.
+\end{proof}
+
+\begin{corollary}[Cyclic carrier inside the canonical pullback]
+\label{cor:cyclic-inside-pullback}
+On $\Delta_{10}$ the subgroup $\langle q_1,\kappa_{\mathrm{pair}}\rangle$ has order $10$ and acts transitively.  Its quotient by $\langle\kappa_{\mathrm{pair}}\rangle$ is cyclic of order five and gives the finite passport $1^5,5,5$ represented by $\beta_5$.  The canonical global quotient $\overline Q_H$ carries the full induced $S_5$ action and has genus $161$, while $\overline L\cong\mathbb P^1_{\mathbb Q}$ is the genus-zero cyclic carrier of \cref{prop:beta5}.  The two constructions therefore provide complementary global and cyclic realizations of the same five-pair finite data.
+\end{corollary}
+
+\begin{corollary}[Infinite tower of finite carriers]\label{cor:beta10-tower}
+The iterates $\beta_{10}^{\circ n}:\Pone\to\Pone$ have degree $10^n$ for every $n\geq1$ and therefore form an explicit infinite tower of finite covers.  At the first carrier level, $t\mapsto-t$ gives the degree-two dual quotient to $\beta_5$.
+\end{corollary}
+
+\begin{proof}
+Degrees multiply under composition, and $\deg\beta_{10}=10$.
+\end{proof}
+
+\begin{remark}[Finite dual-two-five carrier]\label{rem:dual-two-five-scope}
+The ten-state cell carries a cyclic coordinate together with two explicitly certified involutions.  The phase pairing $\kappa_{\mathrm{pair}}$ exchanges equal phases across the two $q_1$-cycles and underlies the canonical set-stabilizer pullback.  The native return $\kappa_{\mathrm{ret}}$ reverses the $q_1$ orientation and gives the dihedral action of \cref{thm:ten-state-native-return}.  The full $107{,}280$-state simultaneous-collision computation has five orbits of size $21{,}456$, while \cref{thm:width-eleven-boundary} supplies the global genus-zero width-$11$ boundary decomposition.
+\end{remark}
+
+\begin{corollary}[Mixed-boundary and cyclic realizations]\label{cor:beta5-carriers}
+The degree-$18$ mixed-boundary cover, the canonical degree-$10$ pullback of \cref{thm:canonical-ten-pullback}, the genus-zero cyclic carrier of \cref{prop:beta5}, and the four width-$11$ components of \cref{thm:width-eleven-boundary} give complementary global and finite realizations of the same five-branch geometry.  The phase-pairing quotient records the cyclic order-five carrier, the native return records the dihedral orientation reversal, and the width-$11$ components record the global mixed-collision geometry.
+\end{corollary}
+
+\section{Common refinements from three through ten branches}\label{sec:mobility}
+
+The explicit three-point realization and the four-/five-branch components admit two exact refinement diagrams:
+\[
+ \mathcal H'_{5}(2A,3A,3A,3A,3A)
+ \longrightarrow
+ \mathcal H_{3}(2A,23A,23B),
+\]
+\[
+ \mathcal H_{5}(2A,2A,2A,2A,3A)
+ \longrightarrow
+ \mathcal H_{4}(2A,2A,3A,5A).
+\]
+The second arrow is the width-five clutching map of \cref{thm:clutch}.  This section constructs the first arrow exactly, joins the two five-branch components through the class-restricted minimal six-branch refinement, upgrades both collision faces to explicit algebraic tail models over $\Q$, and then constructs the separate ten-involution refinement layer.  To preserve the released permutation tuple verbatim, \cref{thm:three-five-refinement} uses the left-action convention of \cite{HuangEtAl}; the accompanying certificate states and verifies that convention explicitly.
+
+\begin{proposition}[Codimension-one four-to-three collision obstruction]\label{prop:collision-obstruction}
+A single collision of the class vector $(2A,2A,3A,5A)$ produces at most one conjugacy class absent from the original vector, whereas the target triple $(2A,23A,23B)$ requires both $23A$ and $23B$.
+\end{proposition}
+
+\begin{proof}
+A single collision replaces two adjacent entries by one product and leaves two entries unchanged.  It can therefore introduce at most one conjugacy class absent from the original vector.  The target triple requires the two new classes $23A$ and $23B$, establishing the obstruction.
+\end{proof}
+
+\begin{lemma}[Two-involution product obstruction for $23$-elements]\label{lem:two-involution-obstruction}
+Products of two involutions in $M_{23}$ avoid the classes $23A$ and $23B$.
+\end{lemma}
+
+\begin{proof}
+Inversion exchanges the classes $23A$ and $23B$ \cite{Atlas,HuangEtAl}.  If $g=ab$ with $a^2=b^2=1$, then
+\[
+ aga=a(ab)a=ba=(ab)^{-1}=g^{-1}.
+\]
+Thus, $g$ would be conjugate to $g^{-1}$ in $M_{23}$, contrary to the two distinct inverse $23$-classes.
+\end{proof}
+
+\begin{theorem}[Exact five-branch refinement of the released triple]\label{thm:three-five-refinement}
+Let $(g_1,g_2,g_3)$ be the explicit product-one tuple of \cite{HuangEtAl}, with class vector $(2A,23A,23B)$.  There are $3A$ elements $a_2,b_2,a_3,b_3$ such that
+\[
+ g_2=a_2b_2,
+ \qquad
+ g_3=a_3b_3,
+\]
+and the five-tuple
+\[
+ (g_1,a_2,b_2,a_3,b_3)
+\]
+has class vector $(2A,3A,3A,3A,3A)$, product one, and generated group $M_{23}$.  One exact choice is
+\begin{align*}
+ a_2={}&(1\,2\,15)(3\,12\,7)(4\,8\,18)(6\,23\,14)(9\,10\,16)(11\,21\,17),\\
+ b_2={}&(2\,17\,18)(3\,6\,7)(5\,8\,22)(9\,14\,11)(12\,15\,13)(19\,20\,23),\\
+ a_3={}&(1\,9\,16)(2\,18\,8)(3\,7\,22)(4\,10\,11)(5\,13\,19)(15\,17\,21),\\
+ b_3={}&(1\,8\,6)(2\,22\,19)(3\,11\,12)(5\,14\,20)(7\,13\,21)(15\,23\,16).
+\end{align*}
+For each of $g_2$ and $g_3$, the exact class search finds $138$ ordered factorizations of type $3A\cdot3A$ and zero of types $2A\cdot2A$, $2A\cdot3A$, and $3A\cdot2A$.
+\end{theorem}
+
+\begin{proof}[Computational proof]
+The refinement verifier reconstructs the $2A$ and $3A$ conjugacy classes in the released degree-$23$ copy of $M_{23}$, of sizes $3{,}795$ and $56{,}672$.  For each target $g_i$, it solves $ab=g_i$ by iterating the first class and testing the forced second factor.  It obtains the stated factorization counts, verifies the printed identities $a_2b_2=g_2$ and $a_3b_3=g_3$, and checks product one for the refined tuple.  The generated subgroup has order $10{,}200{,}960$.
+\end{proof}
+
+\begin{corollary}[Factorization obstruction for the five-branch class]\label{cor:refinement-obstruction}
+Every refinement from $(2A,23A,23B)$ to $(2A,2A,2A,2A,3A)$ using exactly two local monodromies over each $23$-branch has factorization count zero.
+\end{corollary}
+
+\begin{proof}
+Beyond the original $2A$ entry, the two splits would have to use three further $2A$ entries and one $3A$ entry.  Partitioning these four factors into two pairs forces one pair of type $2A\cdot2A$ and the other of mixed type.  The exact factorization count in \cref{thm:three-five-refinement} is zero for all three such ordered types; alternatively, the involution-pair case is covered directly by \cref{lem:two-involution-obstruction}.
+\end{proof}
+
+\begin{theorem}[Class-restricted minimal six-branch common refinement]\label{thm:six-bridge}
+A common six-branch Hurwitz component joins the two five-branch components and has class multiset
+\[
+ \boxed{\{2A,2A,2A,3A,3A,3A\}.}
+\]
+In the left-action convention used for the released tuple, one product-one generating representative is
+\begin{align*}
+ u={}&(1\,15\,6)(2\,18\,16)(4\,20\,9)(5\,8\,22)(7\,12\,21)(10\,14\,19),\\
+ v={}&(1\,6\,16)(2\,15\,18)(4\,7\,21)(8\,22\,13)(9\,20\,12)(10\,17\,19),\\
+ h_3={}&(1\,15)(2\,19)(3\,8)(4\,17)(6\,7)(11\,23)(12\,21)(14\,18),\\
+ h_4={}&(2\,7)(4\,13)(6\,8)(9\,22)(10\,11)(14\,17)(15\,20)(16\,18),\\
+ h_5={}&(1\,20)(3\,7)(4\,18)(6\,19)(9\,22)(10\,23)(13\,17)(14\,16),\\
+ h_6={}&(3\,19\,14)(4\,21\,15)(5\,7\,8)(10\,17\,11)(12\,16\,20)(13\,22\,18).
+\end{align*}
+The tuple $(u,v,h_3,h_4,h_5,h_6)$ has class type $(3A,3A,2A,2A,2A,3A)$ and generates $M_{23}$.  It has two certified collision faces:
+\begin{enumerate}[label=\textnormal{(\alph*)},leftmargin=2.4em]
+\item fusing $uv$ recovers exactly the printed seed of the $(2A,2A,2A,2A,3A)$ component;
+\item fusing $h_4h_5\in3A$ and reordering gives a tuple of type $(2A,3A,3A,3A,3A)$ lying in the same colored braid component as the five-branch refinement of the released $(2A,23A,23B)$ tuple.
+\end{enumerate}
+Among common refinements with six local classes in $\{2A,3A\}$ and one elementary fusion producing each five-branch face, six branches are minimal and the two target passports force the class multiset.
+\end{theorem}
+
+\begin{proof}[Exact finite proof]
+The bridge certificate verifies product one, class membership, and generated group order $10{,}200{,}960$.  It checks $uv=h_1$, where $h_1$ is the first $2A$ entry of the verified five-branch seed; the complete $3A$ class search gives $2688$ ordered $3A\cdot3A$ factorizations of this $2A$ element.  Thus, collision \textnormal{(a)} recovers the five-branch seed exactly.
+
+For the other face, the certificate verifies $h_4h_5\in3A$.  After the indicated collision and two Hurwitz moves that place the unique $2A$ entry first, one obtains an ordered tuple of type $(2A,3A,3A,3A,3A)$.  The two reordering moves are $q_2q_1$.  An explicit word of length $14$ in the colored generators $q_1^2,q_2,q_3,q_4$ and their inverses then carries the five-branch refinement of \cref{thm:three-five-refinement} to the resulting inner Nielsen class.  Because two letters are $q_1^2$, the word has length $16$ in the ordinary braid generators.  The certificate bundle stores the word, its SHA-256 digest, and an independent verifier that reapplies every move before final canonicalization.  This colored five-branch certificate is independent of the $29{,}005$-move full $B_{10}$ certificate of \cref{thm:ten-involution}.
+
+For the stated class-restricted problem, minimality is formal.  The two target passports are distinct and both have five branches, so a strict common refinement by one elementary split requires at least six branches.  At six branches, obtaining $(2A,3A^4)$ by one fusion and $(2A^4,3A)$ by another forces one $2A,2A$ pair to fuse to $3A$ and one $3A,3A$ pair to fuse to $2A$.  The source multiset is therefore $(2A^3,3A^3)$, which the displayed tuple realizes.
+\end{proof}
+
+\begin{theorem}[Algebraic models of the two collision tails]\label{thm:collision-tails}
+For the $3A+3A\to2A$ collision $uv=h_1$ of \cref{thm:six-bridge}, the degree-$23$ tail decomposes over $\Q$ as
+\[
+ 2\alpha_6\;\sqcup\;2\alpha_4\;\sqcup\;3\operatorname{id},
+\]
+where
+\[
+ \boxed{\alpha_6(x)=\left(\frac{12x^2+12x-1}{12x^2-12x-1}\right)^3},
+ \qquad
+ \boxed{\alpha_4(x)=\frac{4x(x-2)^3}{(2x^2+10x-1)^2}}.
+\]
+With branch values ordered as $(0,1,\infty)$, their passports are
+\[
+ \alpha_6:\quad (3,3),\ (2,2,1,1),\ (3,3),
+\]
+and
+\[
+ \alpha_4:\quad (3,1),\ (3,1),\ (2,2).
+\]
+
+For the $2A+2A\to3A$ collision $h_4h_5\in3A$, the degree-$23$ tail decomposes over $\Q$ as
+\[
+ \beta_6\;\sqcup\;4\beta_3\;\sqcup\;\beta_2\;\sqcup\;3\operatorname{id},
+\]
+where
+\[
+ \boxed{\beta_6(x)=\frac{(x^3+1)^2}{4x^3}},
+ \qquad
+ \boxed{\beta_3(x)=\frac{4x^3-3x+1}{2}},
+ \qquad
+ \boxed{\beta_2(x)=\frac{x^2}{x^2+1}}.
+\]
+Their passports are
+\[
+ \beta_6:\quad (2,2,2),\ (2,2,2),\ (3,3),
+\]
+\[
+ \beta_3:\quad (2,1),\ (2,1),\ (3),
+ \qquad
+ \beta_2:\quad (2),\ (2),\ (1,1).
+\]
+For every nontrivial component above, the corresponding transitive small-degree Nielsen triple is unique up to simultaneous conjugacy.  Hence, these rational maps realize the actual restricted permutation triples of the two collision tails.
+\end{theorem}
+
+\begin{proof}[Exact algebraic and finite proof]
+For the first face, the subgroup $\langle u,v\rangle$ has natural-orbit degrees
+\[
+ 6,6,4,4,1,1,1.
+\]
+The identities
+\[
+ (12x^2+12x-1)^3-(12x^2-12x-1)^3
+ =72x(12x^2+1)^2
+\]
+and
+\[
+ 4x(x-2)^3-(2x^2+10x-1)^2=-(4x+1)^3
+\]
+give the stated branch multiplicities directly.  For the second face, $\langle h_4,h_5\rangle$ has natural-orbit degrees
+\[
+ 6,3,3,3,3,2,1,1,1,
+\]
+and direct factorization of $\beta_6$, $\beta_3$, $\beta_2$ and of their differences from $1$ gives the displayed passports.  The collision-tail certificate independently restricts the printed degree-$23$ permutations to every natural orbit and compares the resulting cycle profiles.  Exhaustive enumeration in $S_2,S_3,S_4,S_6$ gives one simultaneous-conjugacy orbit for each required transitive passport, so profile agreement identifies the restricted triples.
+\end{proof}
+
+\begin{corollary}[Arithmetic genus check for the common refinement]\label{cor:six-genus-check}
+The two admissible collision presentations have arithmetic genus $8$, equal to the genus of a smooth degree-$23$ cover with class multiset $(2A^3,3A^3)$.
+\end{corollary}
+
+\begin{proof}
+For the six-branch passport,
+\[
+ 2g-2=-46+3\cdot8+3\cdot12=14,
+\]
+so $g=8$.  On the $3A+3A\to2A$ face, the tail has seven connected components and the $2A$ node has $15$ branches; adjoining the genus-zero main component gives first Betti number $15-(7+1)+1=8$.  On the $2A+2A\to3A$ face, the tail has nine components and the $3A$ node has $11$ branches, so the dual graph has first Betti number $11-(9+1)+1=2$.  The main $(2A,3A^4)$ component has genus $6$ by Riemann--Hurwitz, giving $6+2=8$.
+\end{proof}
+
+\subsection{A ten-involution refinement layer}
+
+\begin{theorem}[Exact ten-involution refinements and five-pair fusion]\label{thm:ten-involution}
+The following exact statements hold.
+\begin{enumerate}[label=\textnormal{(\alph*)},leftmargin=2.4em]
+\item The printed five-branch seed of type $(2A,2A,2A,2A,3A)$ admits an explicit product-one generating refinement
+\[
+ T=(t_1,\ldots,t_{10})\in(2A)^{10}
+\]
+whose five consecutive pair products recover that seed.  The associated degree-$23$ source genus is $18$.
+\item An explicit word of length $29{,}005$ in the full braid generators $q_1,\ldots,q_9$ carries $T$ to a ten-tuple whose consecutive $2+4+4$ block products are simultaneously conjugate to the released tuple $(g_1,g_2,g_3)$ of type $(2A,23A,23B)$.
+\item In the released degree-$23$ copy there is a unique element
+\[
+ h=(1\,5)(2\,22)(3\,8)(7\,20)(10\,17)(11\,21)(12\,14)(18\,23)
+\]
+in $C_{M_{23}}(g_1)$ satisfying
+\[
+ h g_2^{-1}h^{-1}=g_3,
+ \qquad
+ h g_3^{-1}h^{-1}=g_2.
+\]
+It is an involution in class $2A$.
+\item Independently of the ten-tuple in \textnormal{(b)}, the released tuple admits a product-one generating refinement
+\[
+ R=(r_1,\ldots,r_{10})\in(2A)^{10}
+\]
+with exact quadratic branch-cycle symmetry
+\[
+ \sigma_h(r_i)=r_{\iota(i)},
+ \qquad
+ \sigma_h(x)=h x^{-1}h^{-1},
+ \qquad
+ \iota=(3\,10)(4\,9)(5\,8)(6\,7),
+\]
+with positions $1$ and $2$ fixed.
+\item A twelve-move interleaving braid sends $R$ to a ten-tuple $U$ whose consecutive pair products
+\[
+ P_i=u_{2i-1}u_{2i}
+ \qquad(1\leq i\leq5)
+\]
+have orders $(2,2,3,2,2)$, product one, and generated group $M_{23}$.  An eight-move full-$B_5$ word carries the printed target five-branch seed to $P=(P_1,\ldots,P_5)$ modulo simultaneous conjugacy.  Moreover, $\ord(P_3P_4)=11$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Exact computational proof]
+The ten-involution verifier reconstructs both printed ten-tuples, replays every letter of the $29{,}005$-move and twelve-move words, and verifies all block products.  The first tuple has ten entries of index eight, so
+\[
+ 2g-2=-46+10\cdot8=34,
+\]
+which gives $g=18$.  Centralizer enumeration proves uniqueness and the displayed identities for $h$.  The verifier checks the label involution entry by entry.  The five fused entries have the stated orders and product, and their generated subgroup has order $10{,}200{,}960$.  The verifier replays the stored eight-move word in the canonical five-branch quotient and reaches the canonical key of $P$.
+\end{proof}
+
+\begin{theorem}[Framed multiplier stabilization packet]\label{thm:arithmetic-stabilization}
+Let $h$ be the descent involution of \cref{thm:ten-involution}.  Applying
+\[
+ q_3^{-1}q_2^{-1}q_1^2q_2^{-1}q_1q_3^2q_2^{-1}
+\]
+to the released four-factor $23A$ block and defining the $23B$ block by the same $h$-equivariant reversal gives a product-one $2A^{10}$ refinement $R^{\rm st}$.  The released twelve-move interleaving fuses $R^{\rm st}$ to a generating tuple $P^{\rm st}$ of orders $(2,2,3,2,2)$, and
+\[
+ q_4q_3^{-1}q_4q_3^{-1}q_2q_1^{-1}q_2q_1q_3
+\]
+carries the printed target seed to $P^{\rm st}$ modulo simultaneous conjugacy.
+
+For the four entries $A_1,\ldots,A_4$ of the stabilized $23A$ block,
+$\bigl(\ord(hA_1),\ldots,\ord(hA_4)\bigr)=(4,3,5,3)$.  With $a=A_3$ and $r=ha$, exactly three elements $x\in C_{M_{23}}(h)$ satisfy
+\[
+ x^2=h,\qquad x^{-1}rx=r^2,
+\]
+and therefore $\langle r,h\rangle\cong D_{10}<\langle r,x\rangle\cong F_{20}$.  The set
+$\mathcal P=\{r^i,r^ih:i\in\mathbb Z/5\mathbb Z\}$ has ten rigidified markings; right multiplication by $h$ pairs them freely and conjugation by $x$ induces multiplication by $2$ on the five cyclic positions.
+
+Moreover,
+\[
+ (\mathbb Z/30\mathbb Z)^\times=\langle7\rangle\times\langle11\rangle,
+ \qquad 7\equiv(2,1),\quad11\equiv(1,-1)\pmod{(5,3)}.
+\]
+Thus, the action of $x$ on the stabilized marking represents the order-five multiplier required by the framed arithmetic transport law, while exchanging the two involution factors $u_5,u_6$ of the unique $3A$ pair represents the independent order-three inversion, since $u_6u_5=(u_5u_6)^{-1}$.
+\end{theorem}
+
+\begin{proof}[Exact finite and frame-theoretic proof]
+The certificate replays both nine-move words and the twelve-move interleaving, verifies $h$-equivariance, the target canonical key, and generated group order $10{,}200{,}960$.  It enumerates $C_{M_{23}}(h)$ of order $2688$, finds exactly three stated multiplier lifts, and verifies $|\langle r,x\rangle|=20$.  The unit-group decomposition and the factor-swap identity are direct.  In the ordered pointed Hurwitz frame, arithmetic transport uses one cyclotomic exponent and one common frame conjugator; forgetting that frame is a separate quotient, and \cref{prop:dual-conjugacy-collapse} shows that the raw dual representatives then become one inner Nielsen point.  The theorem identifies the required finite multiplier model on the rigidified packet; realization of a specified element of $G_{\Q}$ by a chosen $x$ is a separate arithmetic datum.
+\end{proof}
+
+\begin{remark}[Ordering, the elliptic fiber, and continuation]\label{rem:1728-ordering-role}
+The reduced inertia over $j=1728$ is $2^{1470}$, so every elliptic point has ramification index two.  The construction keeps the equal-class ordering and fiber frame through arithmetic transport and passes to the reduced quotient afterward.  The marking packet $\mathcal P$ lives on this framed refinement.  The iterated degree-ten carrier in \cref{cor:beta10-tower} expresses the same ordered continuation through an explicit infinite tower of finite refinement levels.
+\end{remark}
+
+\begin{proposition}[Local factorization orbit structure]\label{prop:factorization-orbits}
+Fix $z\in2A$.  Under conjugation by $C_{M_{23}}(z)$, the $2688$ ordered factorizations
+\[
+ z=uv,
+ \qquad u,v\in3A,
+\]
+split into four orbits of sizes
+\[
+ \boxed{1344,\ 896,\ 224,\ 224.}
+\]
+The orbit used in \cref{thm:six-bridge} is the unique orbit whose subgroup $\langle u,v\rangle$ has natural-sheet orbits
+\[
+ 6+6+4+4+1+1+1;
+\]
+it has size $1344$ and factorization stabilizer of order two.
+
+The $98$ ordered factorizations
+\[
+ z=ab,
+ \qquad a,b\in2A,
+\]
+split into two centralizer orbits of sizes
+\[
+ \boxed{84+14.}
+\]
+Their natural-sheet orbit decompositions are respectively
+\[
+ 4+4+2+2+2+2+2+2+1+1+1
+\]
+and
+\[
+ 4+4+4+4+1+1+1+1+1+1+1.
+\]
+\end{proposition}
+
+\begin{proof}[Exact computational proof]
+Two independent centralizer computations enumerate the complete $3A$ and $2A$ classes, force the second factor from the first, enumerate the relevant centralizers, and close every conjugation orbit.  The first computation returns $2688$ factorizations and orbit sizes $1344,896,224,224$; the natural-orbit census singles out the displayed $1344$ orbit.  The second returns $98$ factorizations and orbit sizes $84,14$ with the two displayed sheet decompositions.  Since $ab$ is an involution exactly when the involutions $a$ and $b$ commute, every nontrivial transitive local group in the second calculation is a quotient of the Klein four group.
+\end{proof}
+
+\begin{proposition}[Rational local models and the five-pair genus ledger]\label{prop:five-pair-tail-ledger}
+Put
+\[
+ \nu_4(x)=\frac{(x^2+1)^2}{4x^2},
+ \qquad
+ \nu_2(x)=\frac{x^2}{x^2+1}.
+\]
+The map $\nu_4$ has passport
+\[
+ (2,2),\ (2,2),\ (2,2),
+\]
+and $\nu_2$ has passport
+\[
+ (2),\ (2),\ (1,1)
+\]
+up to permutation of the three branch values.  Consequently, the size-$84$ $2A\cdot2A\to2A$ orbit has local tail model
+\[
+ 2\nu_4\ \sqcup\ 6\nu_2^{(\pi)}\ \sqcup\ 3\operatorname{id},
+\]
+where the six degree-two components are appropriate $S_3$-translates of $\nu_2$, while the size-$14$ orbit has model
+\[
+ 4\nu_4\ \sqcup\ 7\operatorname{id}.
+\]
+
+For the ten-tuple $U$ of \cref{thm:ten-involution}, pairs $1$ and $5$ have the size-$84$ profile, pairs $2$ and $4$ have the size-$14$ profile, and pair $3$ has the $2A\cdot2A\to3A$ tail
+\[
+ \beta_6\sqcup4\beta_3\sqcup\beta_2\sqcup3\operatorname{id}
+\]
+of \cref{thm:collision-tails}.  Their arithmetic-genus contributions are
+\[
+ \boxed{4,\ 4,\ 2,\ 4,\ 4,}
+\]
+whose sum is $18$.
+\end{proposition}
+
+\begin{proof}
+The identities
+\[
+ (x^2+1)^2-4x^2=(x^2-1)^2
+\]
+and the pole orders at $0$ and $\infty$ give the passport of $\nu_4$.  The fibers of $\nu_2$ over $0,1,\infty$ have profiles $(2),(2),(1,1)$.  Restricting the five printed involution pairs to their natural-sheet orbits gives exactly the decompositions stated above.
+
+For a $2A$ node, there are $15$ branches.  Both $2A\cdot2A\to2A$ tail types have $11$ connected components, so each contributes $15-11=4$ to the first Betti number of the dual graph.  The $3A$ node has $11$ branches and its tail has nine components, contributing $11-9=2$.  Thus, the five simultaneous tails contribute $4+4+2+4+4=18$, equal to the source genus of $2A^{10}$.
+\end{proof}
+
+\begin{proposition}[Conjugacy collapse of the raw dual tuple]
+\label{prop:dual-conjugacy-collapse}
+Let
+\[
+ R=(r_1,\ldots,r_{10})
+\]
+be the branch-cycle-equivariant refinement of
+\cref{thm:ten-involution}, and define
+\[
+ \sigma_h(x)=h x^{-1}h^{-1},
+ \qquad
+ R^\vee=(\sigma_h(r_1),\ldots,\sigma_h(r_{10})).
+\]
+Every $r_i$ belongs to $2A$ and is therefore an involution.  Consequently,
+\[
+ \boxed{R^\vee=hRh^{-1}}
+\]
+entry by entry.  Apply the same twelve-move interleaving braid to $R$ and $R^\vee$ to obtain $U$ and $U^\vee$, and let $P,P^\vee$ denote their five consecutive pair products.  Then
+\[
+ \boxed{U^\vee=hUh^{-1},\qquad P^\vee=hPh^{-1}.}
+\]
+Thus,
+\[
+ [R^\vee]=[R],\qquad [U^\vee]=[U],\qquad [P^\vee]=[P]
+\]
+in the corresponding inner Nielsen moduli.  Thus, the two permutation representatives determine one inner Nielsen point, and their representative-level exchange remains inside that point.  The exact identities
+\[
+ h^2=1,
+ \qquad
+ \sigma_h(h)=h,
+ \qquad
+ h\sigma_h(h)=1
+\]
+give the representative-level symmetry and cocycle identities.
+\end{proposition}
+
+\begin{proof}
+Since $r_i^2=1$,
+\[
+ \sigma_h(r_i)=h r_i^{-1}h^{-1}=h r_i h^{-1}
+\]
+for every $i$, proving the first identity.  Hurwitz moves commute with
+simultaneous conjugation, so applying the same braid word to both tuples
+preserves this equality and gives $U^\vee=hUh^{-1}$.  Pair multiplication
+then gives $P_i^\vee=h P_i h^{-1}$ for every $i$.  Inner Nielsen classes are
+simultaneous-conjugacy classes, which proves the moduli statement.  The
+exact permutation certificate checks the last three identities directly.
+\end{proof}
+
+\begin{proposition}[Exact fixed/dual fiber of the cyclic quotient]
+\label{prop:beta5-fixed-dual}
+Put
+\[
+ \beta_5(t)=1-(1-t)^5,
+ \qquad x=1-t,
+\]
+and let
+\[
+ Z_5=\beta_5^{-1}(0)=\Spec A_5,
+ \qquad
+ A_5=\Q[x]/(x^5-1).
+\]
+Then $Z_5$ is finite \'etale of degree five over $\Q$ and
+\[
+ \boxed{A_5\simeq\Q\times\Q(\zeta_5).}
+\]
+The involution
+\[
+ \jmath(x)=x^{-1}=x^4
+\]
+has coefficients in $\Q$; in the $t$-coordinate it is
+\[
+ \jmath(t)=\frac{t}{t-1}.
+\]
+Its scheme-theoretic fixed locus is exactly
+\[
+ \boxed{Z_5^\jmath=\{x=1\}=\{t=0\}\simeq\Spec\Q.}
+\]
+The primitive central idempotent of this fixed factor is
+\[
+ \boxed{
+ e_{\mathrm{fix}}
+ =\frac{1+x+x^2+x^3+x^4}{5},
+ }
+\]
+and multiplication by $e_{\mathrm{fix}}$ on $A_5$ has rank one and trace
+one.
+\end{proposition}
+
+\begin{proof}
+The factorization
+\[
+ x^5-1=(x-1)\Phi_5(x)
+\]
+is square-free in characteristic zero, and $\Phi_5$ is irreducible over
+$\Q$.  The Chinese remainder theorem therefore gives
+\[
+ A_5\simeq\Q[x]/(x-1)\times\Q[x]/(\Phi_5)
+ \simeq\Q\times\Q(\zeta_5).
+\]
+On $A_5$, inversion is $x\mapsto x^4$.  The fixed subscheme is cut out by
+$x-x^4$ together with $x^5-1$, and
+\[
+ \gcd(x^5-1,x-x^4)=x-1.
+\]
+Hence, the fixed locus is $\Spec\Q$.  The displayed idempotent evaluates to
+one at $x=1$ and to zero at every nontrivial fifth root of unity, so it is
+the central projector of the $\Q$-factor.  Its multiplication matrix has
+rank one and trace one.
+\end{proof}
+
+\begin{proposition}[Quadratic dual complement and ledger identification]
+\label{prop:beta5-ledger}
+Let $\jmath$ be the involution of
+\cref{prop:beta5-fixed-dual} and put
+\[
+ y=x+x^{-1}.
+\]
+Then
+\[
+ \boxed{
+ A_5^{\jmath}
+ \simeq
+ \Q[y]/\bigl((y-2)(y^2+y-1)\bigr)
+ \simeq
+ \Q\times\Q(\sqrt5).
+ }
+\]
+On the nonfixed factor,
+\[
+ B=\Q[x]/(\Phi_5(x))\simeq\Q(\zeta_5)
+\]
+one has
+\[
+ B^{\jmath}=\Q(\sqrt5),
+ \qquad
+ \boxed{[B:B^{\jmath}]=2.}
+\]
+Thus,
+\[
+ \Spec\Q(\zeta_5)\longrightarrow\Spec\Q(\sqrt5)
+\]
+is the genuine finite \'etale quadratic dual quotient in the cyclic fiber.
+
+Set $K=\Q(\sqrt5)$.  After base change to $K$, define
+\[
+ \boxed{
+ N=\frac{\sqrt5}{5}\,(-y^2+y+2)
+ \in A_5^{\jmath}\otimes_{\Q}K.
+ }
+\]
+Then
+\[
+ N^3=N,
+\]
+and $N$ takes the values
+\[
+ 0,\quad +1,\quad -1
+\]
+on the three $\jmath$-orbits
+\[
+ \{1\},\qquad
+ \{\zeta_5,\zeta_5^{-1}\},\qquad
+ \{\zeta_5^2,\zeta_5^{-2}\}.
+\]
+Consequently,
+\[
+ A_5^{\jmath}\otimes_{\Q}K
+ \simeq K[N]/(N^3-N),
+\]
+with projectors
+\[
+ e_0=1-N^2,
+ \qquad
+ e_+=\frac{N^2+N}{2},
+ \qquad
+ e_-=\frac{N^2-N}{2}.
+\]
+Moreover,
+\[
+ \boxed{e_0=e_{\mathrm{fix}}=\frac{y^2+y-1}{5},}
+\]
+while the nontrivial element of $\Gal(K/\Q)$ sends
+\[
+ N\longmapsto-N,
+ \qquad
+ e_+\longleftrightarrow e_-,
+ \qquad
+ e_0\longmapsto e_0.
+\]
+Finally,
+\[
+ \boxed{
+ \beta_5(e_0)=e_0,
+ \qquad
+ \beta_5(1-N^2)=1-N^{10}=e_0.
+ }
+\]
+Thus, the fixed point, the two dual outcomes, the exact $2{:}1$ quotient,
+and the trivalent ledger describe the same finite \'etale decomposition after
+base change to the quadratic splitting field $K$.
+\end{proposition}
+
+\begin{proof}
+The invariant subspace of $A_5$ under $x\mapsto x^{-1}$ has basis
+\[
+ 1,\qquad x+x^{-1},\qquad x^2+x^{-2}.
+\]
+Since
+\[
+ y^2=2+x^2+x^{-2},
+\]
+the element $y$ generates the invariant algebra.  Direct reduction modulo $x^5-1$ gives
+\[
+ (y-2)(y^2+y-1)=0,
+\]
+which proves the invariant-algebra presentation.  The quadratic factor has
+discriminant $5$, giving the second displayed isomorphism.
+
+On $B=\Q(\zeta_5)$, inversion is complex conjugation, so its fixed field is
+the maximal real subfield
+\[
+ \Q(\zeta_5+\zeta_5^{-1})=\Q(\sqrt5).
+\]
+The extension therefore has degree two.
+
+Over $K$, the three roots of the invariant polynomial are
+\[
+ 2,\qquad \frac{\sqrt5-1}{2},\qquad
+ -\frac{\sqrt5+1}{2}.
+\]
+Substitution into the displayed formula for $N$ gives $0,1,-1$.
+Therefore, $N^3=N$ and $N$ separates the three factors, proving the ledger
+isomorphism.  Reduction modulo
+$(y-2)(y^2+y-1)$ gives
+\[
+ 1-N^2=\frac{y^2+y-1}{5},
+\]
+which is exactly the projector of the fixed factor.  Conjugating
+$\sqrt5$ changes $N$ to $-N$ and exchanges the two nonfixed projectors.
+The last identities follow from idempotency of $e_0$ and from $N^3=N$.
+\end{proof}
+
+\begin{corollary}[Fixed/dual decomposition of the cyclic fiber]
+\label{cor:beta5-fixed-dual}
+Central idempotents split $Z_5=\beta_5^{-1}(0)$ as
+\[
+ \boxed{
+ Z_5
+ =\Spec\Q\ \sqcup\ \Spec\Q(\zeta_5),
+ \qquad
+ Z_5^\jmath=\Spec\Q.
+ }
+\]
+The primitive central trace-one projector $e_{\mathrm{fix}}$ selects the $\Q$-rational fixed summand.  On the complementary factor, inversion has fixed field $\Q(\sqrt5)$ and gives the finite \'etale quadratic extension
+\[
+ \Q(\zeta_5)/\Q(\sqrt5).
+\]
+\end{corollary}
+
+\begin{definition}[Rigidified pair-marked boundary stack]
+\label{def:pair-marked-boundary}
+Let $\mathcal H_5^{\mathrm{ord}}$ denote the full ordered Hurwitz stack over $\Q$ of
+connected degree-$23$ covers of type $(2A,2A,3A,2A,2A)$.  Let
+\[
+ \widetilde{\mathcal H}_5^{\mathrm{pair}}
+ \longrightarrow
+ \mathcal H_5^{\mathrm{ord}}
+\]
+be the finite marking stack which records, for each of the five local
+monodromies, an ordered $2A\cdot2A$ factorization of the same local type as
+the corresponding pair of $U$, together with rigidifications identifying
+the associated tail with the printed rational tail model.
+
+Let $\mathfrak D_{\mathrm{pair}}$ be the corresponding balanced pair-clutching boundary stratum.  In the standard product description of a fully marked admissible-cover boundary stratum, one factor is the central five-point cover and the other five factors are the fixed rational tail covers of \cref{prop:five-pair-tail-ledger}; the factors are glued along the specified node-evaluation sections.
+\end{definition}
+
+\begin{theorem}[Global pair-clutching and core stabilization]
+\label{thm:global-pair-stabilization}
+There are morphisms of algebraic stacks over $\Q$
+\[
+ \widetilde{\mathcal H}_5^{\mathrm{pair}}
+ \xrightarrow{\ J\ }
+ \mathfrak D_{\mathrm{pair}}
+ \xrightarrow{\ S\ }
+ \mathcal H_5^{\mathrm{ord}}
+\]
+such that
+\[
+ \boxed{S\circ J=\pi,}
+\]
+where $\pi$ forgets the pair markings.  The morphism $J$ attaches the five
+fixed rational tail covers, while $S$ takes the normalized inverse image of
+the central target component and regards the five nodes as branch sections
+with monodromy equal to the corresponding pair product.
+\end{theorem}
+
+\begin{proof}
+The explicit tail maps of \cref{prop:five-pair-tail-ledger} lie over $\Q$, and their node passports agree with the restrictions of the five printed permutation pairs.  Standard admissible-cover clutching therefore defines $J$ after the stated finite marking and rigidification.  By construction of the marked boundary stratum, projection to the central factor defines $S$; forgetting the five node markings turns that factor into the fused five-branch cover.  Attaching the five fixed tails and then projecting back to the central factor recovers the original cover after the pair markings are forgotten, so $S\circ J=\pi$.  This is the standard clutching/product description of marked admissible-cover boundary strata, expressed on the balanced twisted-cover normalization \cite{AbramovichCortiVistoli,Wewers}.
+\end{proof}
+
+\begin{theorem}[Balanced five-node smoothing]
+\label{thm:five-node-smoothing}
+Let $\xi$ be a geometric point of $\mathfrak D_{\mathrm{pair}}$.  After passage to an \'etale neighborhood of $\xi$, each of the five balanced target nodes has a local chart
+\[
+ [\Spec A[z_i,w_i]/(z_i w_i-t_i)\,/\,\mu_{r_i}],
+ \qquad
+ (z_i,w_i)\longmapsto(\zeta z_i,\zeta^{-1}w_i).
+\]
+The five disjoint nodes admit simultaneous local smoothing parameters $t_1,\ldots,t_5$.  The diagonal specialization
+\[
+ t_1=\cdots=t_5=t
+\]
+defines an \'etale-local algebraic one-parameter smoothing of all five nodes over the residue field of the pair-marked admissible cover.
+\end{theorem}
+
+\begin{proof}
+For a twisted node, Abramovich--Corti--Vistoli give an \'etale-local quotient chart of the displayed form, with inverse tangent characters in the balanced case, and identify balanced twisted covers with the normalization framework for admissible covers.  For a marked nodal target, disjoint nodes contribute independent local smoothing parameters; pulling those parameters back to the balanced cover chart gives $t_1,\ldots,t_5$.  Restriction to the diagonal $t_1=\cdots=t_5$ gives the stated \'etale-local algebraic one-parameter smoothing \cite{AbramovichCortiVistoli}.
+\end{proof}
+
+\begin{corollary}[Closed geometric mobility diagram]\label{cor:mobility-network}
+At the Nielsen-class and admissible-boundary level, the explicit connected refinement network is
+\[
+ (2A,23A,23B)
+ \longleftarrow
+ (2A,3A^4)
+ \longleftarrow
+ (2A^3,3A^3)
+ \longrightarrow
+ (2A^4,3A)
+ \longrightarrow
+ (2A,2A,3A,5A),
+\]
+where exact collision certificates give the first, middle, and last arrows, and the braid word above certifies membership of the middle-left face in the released five-branch refinement component.  At the all-involution level, the exact certificates give
+\[
+ (2A,23A,23B)
+ \longleftarrow
+ 2A^{10}
+ \longrightarrow
+ (2A^4,3A),
+\]
+in the precise two-part sense of \cref{thm:ten-involution}: one $B_{10}$ component contains refinements of the released triple and the target seed, while a separately certified branch-cycle-equivariant refinement fuses into the verified target five-branch component.
+\end{corollary}
+
+
+\section{Computational certificates}\label{sec:repro}
+The finite computations and the geometric deductions are separated as follows.  ``Machine'' means that the stated finite or symbolic datum is recomputed exactly by the released verifier.  ``Machine + prose'' means that the finite input is machine-verified and the geometric conclusion is proved in the cited argument of the article.
+
+\begingroup
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.12\textwidth}>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.58\textwidth}}
+\toprule
+Main theorem & Verification layer & Public certificate or proof layer \\
+\midrule
+\endfirsthead
+\toprule
+Main theorem & Verification layer & Public certificate or proof layer \\
+\midrule
+\endhead
+(i), (iii) & Machine & \path{computations/core/geometry_certificates/verify_m23_ordered_hurwitz.py}, \path{computations/core/geometry_certificates/verify_m23_nielsen_exhaustiveness.py}, and \path{computations/core/geometry_certificates/verify_m23_reduced_jline.py}. \\
+(ii) & Machine + prose & \path{computations/arithmetic/code/verify_m23_real_boundary.py} certifies the finite boundary data; \cref{cor:q-model,thm:index-one} prove the $\Q$-model and divisor consequences. \\
+(iv) & Machine + prose & \path{computations/core/geometry_certificates/m23_five_branch_clutching.cpp} certifies the width-five cycles and clutching bijections; admissible-cover identification uses \cite{HarrisMumford,AbramovichCortiVistoli,Wewers}. \\
+(v) & Machine + prose & The four- and five-branch equation builders and the $B_{27}$ result files certify the algebraic data; \cref{sec:coefficients} states the source-activation criterion. \\
+(vi)--(viii) & Machine + prose & \path{computations/core/m23_six_bridge_certificate.py} and \path{computations/core/m23_collision_tail_certificate.py} certify the finite words, factorizations, and passports; the article proves the corresponding clutching interpretation. \\
+(ix) & Machine + prose & \path{computations/core/m23_recursive_pullback_certificate.py} certifies the set-stabilizer data; \cref{thm:canonical-ten-pullback,lem:ten-state-arithmetic-stability,thm:comparison-morphism-final} prove the base change, arithmetic descent, and quotient descent. \\
+(x)--(xii) & Machine + prose & \path{computations/core/m23_arithmetic_stabilization_certificate.py} and \path{computations/core/m23_five_pair_tail_certificate.py} certify the refinement, multiplier, factorization, and tail data; the associated fusion and stabilization are proved in the text. \\
+(xiii)--(xv) & Machine + prose & \path{computations/core/m23_fixed_dual_fiber_certificate.py}, \path{computations/core/m23_dual_two_fives_certificate.cpp}, \path{computations/core/m23_dual_two_fives_projector.py}, and \path{computations/core/m23_ten_width11_completion_certificate.cpp} certify the finite-algebra, ten-state, native-return, and width-$11$ data; the article supplies the quotient and admissible-cover interpretations. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Every listed source, recorded output, and auxiliary datum is bound by the release-level \path{SHA256SUMS.txt}; the master replay compares fresh mathematical JSON content against the recorded outputs before reporting success.  An independent GAP/CTblLib Frobenius cross-check is supplied as \path{computations/INDEPENDENT_GAP_CROSSCHECK.g}; when GAP with CTblLib is available, \path{RUN_ALL_CERTIFICATES.sh} verifies the counts $98$, $2688$, and $127{,}200$ independently of the Python/C++ braid computations.
+The accompanying release contains exact source verifiers, stored outputs, coefficient files, and SHA-256 hashes for every finite computation used above.  The folder \path{computations/core/} reconstructs the $980$-state ordered class, exhausts the $14{,}402{,}025$ fixed-$5A$ pair search, reconstructs the $11{,}760$ all-orderings orbit and degree-$2940$ reduced $j$-line, enumerates the complete $21{,}456$ five-branch component and its clutching boundaries, expands the $48$- and $72$-equation systems, and verifies the six- and ten-branch refinement certificates.
+
+The arithmetic stabilization source \path{computations/core/m23_arithmetic_stabilization_certificate.py} verifies the $h$-equivariant refinement, target-component word, $D_{10}<F_{20}$ marking packet, multiplier-$2$ lifts, and order-$3$ pair-swap inversion.  The source \path{computations/core/m23_dual_two_fives_certificate.cpp} reconstructs the selected ten-state cell and canonical five phase pairs; \path{computations/core/m23_dual_two_fives_projector.py} verifies the rank-five projectors, multiplier action, pairing quotient, and $\beta_{10}$ model.  The source \path{computations/core/m23_ten_width11_completion_certificate.cpp} reconstructs the same $21{,}456$-state component and verifies the native return $\kappa_{\mathrm{ret}}q_1\kappa_{\mathrm{ret}}=q_1^{-1}$, the dihedral order-$10$ action, all $264$ width-$11$ cusps, the four degree-$66$ genus-zero components, and the component-pairing involution $\kappa_{11}$.  The supplied subfolder \path{computations/core/width11_boundary_resolution/} preserves the independent width-$11$ verifier and recorded output reproducing the four degree-$66$ passports, genus calculations, and inverse-return component pairing.  The source \path{computations/core/m23_recursive_pullback_certificate.py} verifies the order-$92{,}897{,}280$ mixed-boundary group, the central deck involution, the $126$-subset orbit, the transitive ten-state stabilizer action, exact agreement with the canonical $\kappa_{\mathrm{pair}}$-pairing, the induced $S_5$ quotient, and the genera $31$, $327$, and $161$.  The source \path{computations/core/m23_comparison_morphism_certificate.py} verifies the finite hypotheses used by \cref{thm:comparison-morphism-final}: the global quotient source $\overline Q_H$, genus $161$, the central-involution equivariance data, finite quotient descent, and the separate genus-zero $1^5,5,5$ cyclic carrier represented by $\beta_5$.  The source \path{computations/core/m23_raw_dickson_separation_certificate.cpp} verifies five $21{,}456$-state orbits for the raw pure simultaneous-collision subgroup.
+
+The folder \path{computations/arithmetic/} contains the real-boundary verifier, the degree-$27$ target-algebra checks, the reduced $j$-line arithmetic data, boundary and transport checks, and the universal coefficient-model data.  The root script \path{RUN_ALL_CERTIFICATES.sh} dispatches the public verification suite with Python bytecode generation disabled.  \path{STRUCTURE.md} records the package map, and \path{SHA256SUMS.txt} binds the public deposit.
+
+\paragraph{Data and code availability.} The complete computational release is assigned Zenodo DOI \texttt{10.5281/zenodo.22010546}.  The deposit contains the manuscript sources, deterministic verification programs, recorded machine-readable outputs, replay script, environment record, and SHA-256 integrity manifest.
+
+\section{Conclusion}
+\small
+
+The ordered $(2A,2A,3A,5A)$ Nielsen class contains exactly $980$ generating states and gives a genus-$119$ cross-ratio Hurwitz curve.  The full all-orderings construction produces a degree-$2940$, genus-$43$ reduced $j$-line cover with $406$ cusps.  The colored $(2A^4,3A)$ component contains $21{,}456$ states, and all six equal-$2A$ width-five collision divisors return the complete $980$-state four-branch component by admissible-cover clutching and equal-class braid symmetry.
+
+The real-boundary verification gives eight individual $\Q$-rational points on the compactified ordered curve, while the two width-one degree-two divisors over $\lambda=1$ and $\lambda=\infty$ are imaginary quadratic.  Interior specialization is recorded separately through the degree-$27$ target algebra $B_{27}=\Q[Z]/(Z^{27}-Z)$ and its trace-one projectors, with the genuine degree-$980$ source algebra and algebra map serving as the activation datum.
+
+The explicit $(2A,23A,23B)$ triple admits a five-branch refinement of type $(2A,3A^4)$.  The class $(2A^3,3A^3)$ forms a common six-branch refinement between that component and the $(2A^4,3A)$ component.  The rational maps $\alpha_6,\alpha_4,\beta_6,\beta_3,\beta_2$ realize the corresponding local admissible tails over $\Q$.  At the all-involution level, a $29{,}005$-move braid identifies a $2A^{10}$ refinement of the target seed with a refinement contracting to the explicit three-point triple, while a branch-cycle-equivariant ten-involution refinement fuses by five pairs into the verified target component.  The local factorization orbit decompositions are $1344+896+224+224$ and $84+14$, and the five local genus contributions sum to the source genus $18$.
+
+The stabilization carries a certified $D_{10}<F_{20}$ marking: $x^2=h$ realizes the order-five doubling action, while swapping the unique ordered $2A\cdot2A\to3A$ pair realizes inversion.  The reduced $j=1728$ computation is fixed-point-free of type $2^{1470}$; arithmetic stabilization therefore stays in the ordered frame before quotienting.  The degree-ten carrier $\beta_{10}$ iterates to finite covers of degree $10^n$, giving the explicit infinite tower attached to this continuation.
+
+The degree-five cyclic cover has zero-fiber algebra $A_5=\Q[x]/(x^5-1)\simeq\Q\times\Q(\zeta_5)$.  Inversion fixes exactly the $\Q$-factor.  The primitive central idempotent $e_{\mathrm{fix}}=(1+x+x^2+x^3+x^4)/5$ selects that factor and has multiplication rank and trace one.  On the complementary cyclotomic factor, inversion has fixed field $K=\Q(\sqrt5)$ and gives the degree-two \'etale extension $\Q(\zeta_5)/K$.  After base change to $K$, the invariant algebra splits as $A_5^{\jmath}\otimes_{\Q}K\simeq K[N]/(N^3-N)$ with $e_0=1-N^2$ and $e_\pm=(N^2\pm N)/2$.  The nontrivial element of $\Gal(K/\Q)$ fixes $e_0$ and exchanges $e_+$ with $e_-$.  Thus, the rational fixed channel and the two conjugate split channels form one exact finite \'etale fixed/dual decomposition.
+
+For the ten-involution symmetry, every refined entry is an involution, so $R^\vee=hRh^{-1}$, $U^\vee=hUh^{-1}$, and $P^\vee=hPh^{-1}$.  These representatives therefore define one inner Nielsen point, while the representative-level cocycle identity $h\sigma_h(h)=1$ remains exact.  The rigidified pair-clutching morphism attaches the five explicit rational tails, central-core stabilization recovers the fused five-branch cover, and balanced twisted-cover deformation theory gives an \'etale-local simultaneous smoothing of the five nodes.
+
+The mixed-boundary calculation geometrizes the ten-state cell after the canonical set-stabilizer base change and supplies the quotient comparison morphism $\mathfrak B_H$ by finite descent.  The mixed-boundary monodromy group has order $92{,}897{,}280$, the orbit of $\Delta_{10}$ has size $126$, and the set stabilizer acts transitively on the ten states.  The unique central deck involution restricts to the phase pairing $\kappa_{\mathrm{pair}}$, producing the connected degree-$10$ pullback and its genus-$161$ degree-$5$ quotient.  On the same ten states, the native return $\kappa_{\mathrm{ret}}(n,p)=(1-n,p+1)$ satisfies $\kappa_{\mathrm{ret}}q_1\kappa_{\mathrm{ret}}=q_1^{-1}$ and gives a dihedral group of order $10$.  The global width-$11$ mixed-boundary locus consists of $264$ cusps in four degree-$66$, genus-zero components, paired by $\kappa_{11}$ as $0\leftrightarrow2$ and $1\leftrightarrow3$.  These results, together with the full six-direction width-five clutching and the six- and ten-branch refinement diagrams, give a single exact description of the positive-dimensional $M_{23}$ Hurwitz geometry connected to the explicit three-point construction.
+
+\normalsize
+
+\section*{Acknowledgments}
+The authors congratulate Xiaoyu Huang, Blake Jackson, Kyu-Hwan Lee, Bjorn Poonen, Rachel Pries, and Shaowu Zhang on their resolution of the inverse Galois problem for $M_{23}$, and thank them for their encouragement to publish.  OpenAI ChatGPT and Anthropic Claude were used for code generation, computational verification, error checking, and manuscript revision.  All computational claims are tied to independently executable source files, recorded outputs, and cryptographic hashes in the accompanying release; the geometric deductions are proved in the text from those certified finite inputs.
+
+\begin{thebibliography}{99}
+\scriptsize
+\setlength{\itemsep}{0.02em}
+\setlength{\parsep}{0pt}
+
+\bibitem{Atlas}
+J.~H. Conway, R.~T. Curtis, S.~P. Norton, R.~A. Parker, and R.~A. Wilson,
+\emph{Atlas of Finite Groups}, Clarendon Press, Oxford, 1985.
+
+
+
+
+
+\bibitem{FriedVolklein}
+M.~D. Fried and H. V\"olklein,
+The inverse Galois problem and rational points on moduli spaces,
+\emph{Math. Ann.} \textbf{290} (1991), 771--800.
+
+\bibitem{Haefner}
+F. H\"afner,
+Braid orbits and the Mathieu group $M_{23}$ as Galois group,
+\emph{arXiv:2202.08222}, 2022.
+
+\bibitem{HuangEtAl}
+X. Huang, B. Jackson, K.-H. Lee, B. Poonen, R. Pries, and S. Zhang,
+The Mathieu group $M_{23}$ is a Galois group over $\Q$,
+\emph{arXiv:2608.08538}, 2026.
+
+\bibitem{AbramovichCortiVistoli}
+D.~Abramovich, A.~Corti, and A.~Vistoli,
+Twisted bundles and admissible covers,
+\emph{Comm. Algebra} \textbf{31} (2003), 3547--3618.
+
+\bibitem{HarrisMumford}
+J.~Harris and D.~Mumford,
+On the Kodaira dimension of the moduli space of curves,
+\emph{Invent. Math.} \textbf{67} (1982), 23--86.
+
+\bibitem{Koenig}
+J.~K\"onig,
+\emph{The inverse Galois problem and explicit computation of families of covers of $\mathbb P^1_{\mathbb C}$ with prescribed ramification},
+Ph.D. thesis, Universit\"at W\"urzburg, 2014.
+
+\bibitem{MalleMatzat}
+G.~Malle and B.~H. Matzat,
+\emph{Inverse Galois Theory}, Springer Monographs in Mathematics,
+Springer, Berlin--Heidelberg, 1999.
+
+\bibitem{Seguin}
+B.~Seguin,
+Fields of definition of components of Hurwitz spaces,
+\emph{Ann. Sc. Norm. Super. Pisa Cl. Sci.} \textbf{26} (2025),
+DOI: 10.2422/2036-2145.202310\_013.
+
+\bibitem{Wewers}
+S. Wewers,
+\emph{Construction of Hurwitz Spaces}, Ph.D. thesis, Universit\"at Essen, 1998.
+
+\end{thebibliography}
+
+\end{document}

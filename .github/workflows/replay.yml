@@ -1,0 +1,21 @@
+# Runs the full certificate suite on every push, and on demand from the Actions tab.
+name: Replay certificates
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      quick:
+        description: "Set to 1 to skip the two heaviest stages; 0 runs everything"
+        default: "0"
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: pip install -r deposit/M23_Hurwitz_Component/requirements.txt
+      - run: cd deposit/M23_Hurwitz_Component && sha256sum -c SHA256SUMS.txt
+      - run: cd deposit/M23_Hurwitz_Component && QUICK=${{ inputs.quick || '0' }} bash RUN_ALL_CERTIFICATES.sh

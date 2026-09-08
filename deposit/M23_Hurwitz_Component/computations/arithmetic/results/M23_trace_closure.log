@@ -1,0 +1,5 @@
+M23_TRACE_CLOSURE
+PASS True
+REDUCED_TRACE_TABLE {'tr(c)': 82, 'tr(c gamma_1)': 6, 'tr(c gamma_infinity)': 6, 'cycle_type(c gamma_1)': {'1': 6, '2': 1467}, 'cycle_type(c gamma_infinity)': {'1': 6, '2': 1467}}
+FIELD_TRACE_C5 [193, 5, 125, 60, 83, 145, 182, 168, 64, 62, 47, 132]
+REFERENCE_BOX {'rotation_cycle_type': {'1': 1, '4': 2}, 'orbit_sizes': [1, 4, 4], 'reynolds_projector_rank': 3, 'unique_fixed_cell': [0, 0]}

@@ -1,0 +1,141 @@
+{
+  "certificate": "M23_COMPLETE_211_FAMILY",
+  "environment": {
+    "script_sha256": "0eee562ea9771341c976beabc615c269074de90428bd3912d10cdf38babe36d9"
+  },
+  "files": {
+    "exhaustive_log_sha256": "2289904163b20f8be844444304cf66d45507597c3bc2d0ae2a3ebee233b7d85a",
+    "points_sha256": "b52df25979cf4028501c1d0313b0966f13ea949d6f8a7dba41d7432e74045fe3"
+  },
+  "pass": true,
+  "prime": 211,
+  "proposed_directions": {
+    "direct_127_211": {
+      "alpha": [
+        42,
+        127,
+        108,
+        33,
+        179
+      ],
+      "stage_four_residual": [
+        208,
+        83,
+        97,
+        140,
+        77,
+        173,
+        10,
+        156,
+        186,
+        92,
+        125,
+        130
+      ],
+      "u4": [
+        127,
+        108,
+        33,
+        179
+      ]
+    },
+    "original_selected": {
+      "alpha": [
+        47,
+        190,
+        62,
+        203,
+        107
+      ],
+      "stage_four_residual": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "u4": [
+        190,
+        62,
+        203,
+        107
+      ]
+    },
+    "roman_carry": {
+      "alpha": [
+        169,
+        0,
+        0,
+        1,
+        0
+      ],
+      "stage_four_residual": [
+        14,
+        105,
+        110,
+        50,
+        133,
+        107,
+        94,
+        116,
+        187,
+        63,
+        120,
+        167
+      ],
+      "u4": [
+        0,
+        0,
+        1,
+        0
+      ]
+    }
+  },
+  "scope": "The complete nondegenerate released m3=179 family has no compatible all-order 211-adic lift. This does not itself construct or exclude rational points on other residue branches or a central idempotent in a separate genuine interior fiber algebra.",
+  "stage_five": {
+    "affine_span_equations": [
+      "205 + 9 alpha1 + 200 alpha2 + alpha3 = 0",
+      "100 + 156 alpha1 + 190 alpha2 + alpha4 = 0"
+    ],
+    "kernel_sensitivity_zero_on_complete_survivor_locus": true,
+    "survivor_count": 212
+  },
+  "stage_four_obstruction": {
+    "coordinate_multipliers": [
+      112,
+      207,
+      36,
+      189,
+      9,
+      12,
+      119,
+      84,
+      19,
+      82,
+      116,
+      70
+    ],
+    "factorization": "11*L1*L2*L3",
+    "linear_factors": [
+      "alpha4-(16+92 alpha1+93 alpha2+51 alpha3)",
+      "alpha4-(22+83 alpha1+104 alpha2+50 alpha3)",
+      "alpha4-(134+126 alpha1+28 alpha2+172 alpha3)"
+    ],
+    "survivor_count": 28092751
+  },
+  "stage_two_hyperplane": "alpha0 + 14 alpha1 + 124 alpha2 + 155 alpha3 + 91 alpha4 = 113",
+  "terminal_lifting": {
+    "all_212_fail_at_power": 7,
+    "all_212_lift_through_power": 6,
+    "terminal_records_sha256": "b5d0bca531b5374c53d4a4aaa98ceb98c0ab637d9246849a86d00e3299128126",
+    "terminal_residuals_nonzero": true,
+    "terminal_sensitivity_rank": 0
+  }
+}

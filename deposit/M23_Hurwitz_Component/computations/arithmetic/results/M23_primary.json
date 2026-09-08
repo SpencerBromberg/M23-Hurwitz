@@ -1,0 +1,233 @@
+{
+  "atlas_copy": {
+    "degree": 23,
+    "five_transitive": false,
+    "four_transitive": true,
+    "generator_orders": [
+      2,
+      4
+    ],
+    "order": 10200960,
+    "point_stabilizer_orbit_sizes": [
+      1,
+      22
+    ],
+    "point_stabilizer_order": 443520,
+    "product_order": 23,
+    "stabilizer_chain_orbit_sizes": [
+      [
+        23
+      ],
+      [
+        1,
+        22
+      ],
+      [
+        1,
+        1,
+        21
+      ],
+      [
+        1,
+        1,
+        1,
+        20
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        3,
+        16
+      ]
+    ],
+    "stabilizer_chain_orders": [
+      10200960,
+      443520,
+      20160,
+      960,
+      48
+    ],
+    "transitive": true,
+    "two_transitive": true
+  },
+  "checks": {
+    "artin_q1q2q1_all_states": true,
+    "artin_q2q3q2_all_states": true,
+    "atlas_four_transitive": true,
+    "atlas_generator_orders_2_4": true,
+    "atlas_not_five_transitive": true,
+    "atlas_order": true,
+    "atlas_product_order_23": true,
+    "atlas_transitive": true,
+    "atlas_two_transitive": true,
+    "canonicalization_conjugacy_self_check": true,
+    "compactified_genus": true,
+    "equal_slot_half_twist_cycle_type": true,
+    "equal_slot_half_twist_order": true,
+    "equal_slot_half_twist_square_is_b12": true,
+    "far_commutativity_q1q3_all_states": true,
+    "operator_connectedness": true,
+    "operator_cycle_types": true,
+    "operator_indices": true,
+    "operator_inverse_checks": true,
+    "operator_product_one_on_inner_classes": true,
+    "orbit_closed_under_six_point_pushes": true,
+    "orbit_size": true,
+    "ordered_class_vector_all_states": true,
+    "peripheral_product_is_inner_conjugation_all_states": true,
+    "point_stabilizer_order": true,
+    "printed_seed_index_one_based": true,
+    "printed_seed_peripheral_cycle_lengths": true,
+    "product_one_all_states": true,
+    "qmove_inverse_relations_all_states": true,
+    "source_genus": true,
+    "tuple_cycle_types": true,
+    "tuple_generated_group_order": true,
+    "tuple_indices": true,
+    "tuple_membership": true,
+    "tuple_orders": true,
+    "tuple_product_one": true
+  },
+  "conventions": {
+    "base": "ordered M_0,4 = P^1 minus {0,1,infinity}",
+    "equivalence": "simultaneous S_23-conjugacy; equal to inner equivalence for this action",
+    "hurwitz_move": "q_i(a,b)=(a*b*a^-1,a)",
+    "permutation_action": "right",
+    "product": "i^(xy)=(i^x)^y"
+  },
+  "degree_23_tuple": {
+    "cycle_types": [
+      {
+        "1": 7,
+        "2": 8
+      },
+      {
+        "1": 7,
+        "2": 8
+      },
+      {
+        "1": 5,
+        "3": 6
+      },
+      {
+        "1": 3,
+        "5": 4
+      }
+    ],
+    "fingerprint_sha256": "f7c1cc63ea2b00b9da651667cd0fa45f89270af408bc9eaa218d4a4f5cd916ff",
+    "generated_group_order": 10200960,
+    "indices": [
+      8,
+      8,
+      12,
+      16
+    ],
+    "membership_in_atlas_copy": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "orders": [
+      2,
+      2,
+      3,
+      5
+    ],
+    "product_one": true,
+    "source_genus": 0
+  },
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "script_sha256": "0a416114cc56f4c4fdac0f1df2b71176fcc15292ed798fe5457d050723f72019",
+    "sympy": "1.14.0"
+  },
+  "ordered_hurwitz_orbit": {
+    "compactified_genus": 119,
+    "component_sizes": [
+      980
+    ],
+    "cycle_types": [
+      {
+        "1": 24,
+        "2": 136,
+        "3": 178,
+        "5": 30
+      },
+      {
+        "1": 2,
+        "2": 21,
+        "3": 16,
+        "4": 41,
+        "5": 46,
+        "7": 38,
+        "8": 12,
+        "11": 12
+      },
+      {
+        "1": 2,
+        "2": 21,
+        "3": 16,
+        "4": 41,
+        "5": 46,
+        "7": 38,
+        "8": 12,
+        "11": 12
+      }
+    ],
+    "equal_slot_half_twist": {
+      "cycle_type": {
+        "2": 12,
+        "3": 38,
+        "4": 68,
+        "5": 30,
+        "6": 70
+      },
+      "order": 60,
+      "square_is_b12": true,
+      "word": "q1"
+    },
+    "indices": [
+      612,
+      792,
+      792
+    ],
+    "operator_inverse_checks": [
+      true,
+      true,
+      true
+    ],
+    "operator_names": [
+      "B12",
+      "B13",
+      "B14"
+    ],
+    "operator_product_one_on_inner_classes": true,
+    "operator_sha256": [
+      "45d067fef7db3db33af28b52b0089c40e1db7535e84d1f9566f725010aed8bc9",
+      "ce159288c02ad663858ae4a164ab1047a2241af4d5471c6358706bded22dae27",
+      "8ea8cca1001ec732a8344fbd57b4f6cf5a6de91437f7415ed11508bce4fbc872"
+    ],
+    "operators_combined_sha256": "34dc0daf1feffef80feef0ed453a110c00cebd0b60cf28dc0d580ef73caa1cf2",
+    "orbit_keys_sha256": "cf5e46fd0c13b69dc9ccffefacba9c51404b1fa1419fe7e0ee48dedce6df5a04",
+    "printed_seed": {
+      "index_one_based": 1,
+      "peripheral_cycle_lengths": {
+        "B12": 1,
+        "B13": 11,
+        "B14": 11
+      }
+    },
+    "size": 980,
+    "total_index": 2196
+  },
+  "pass": true,
+  "performance": {
+    "elapsed_seconds": 2.382677,
+    "peak_rss_kb": 168568
+  }
+}
